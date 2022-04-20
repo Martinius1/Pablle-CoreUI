@@ -5,32 +5,56 @@
 <button class="btn btn-sm btn-outline-primary me-2" (click)="dp.navigateTo()">To current month</button>
 <button class="btn btn-sm btn-outline-primary me-2" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
 
+
+
 <div class="container">
   <div class="row justify-content-center">
-
     <div class="col-9">
       <div class="shadow-lg card border-top-primary border-top-3 mb-3">
         <div class="card-header ">
           <h3 class="what">
-            Message Log
-
             <button class="btn btn-sm btn-primary float-end" data-bs-toggle="modal" data-bs-target="#MailSetPopup"><svg cIcon class="me-2" name="cilSettings"></svg>Set</button>
-            <button class="haha2 btn btn-sm btn-primary float-end" routerLink="/logs/alert">Alert Log</button>
-            <button class="haha btn btn-sm btn-primary float-end " routerLink="/logs">Message Log</button>
-
-
-
-
+            <button class="btn btn-sm btn-primary float-end" style="margin-right:0.3vw" (click)=toogleTag()>Message/alerts</button>
           </h3>
         </div>
-        <!--Message logy-->
-        <app-msg-log></app-msg-log>
-        <!--Alter logy-->
-        <app-alert-log></app-alert-log>
+
+<div *ngIf="showMe==false" class="monthly">
+  1
+</div>
+
+
+
+<div *ngIf="showMe!=false" class="weekly" >
+  2
+</div>
+
+
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="MailSetPopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
