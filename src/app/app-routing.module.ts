@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DefaultLayoutComponent } from './containers';
 import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
-import { LoginPageComponent } from './views/pages/login/login.component';
+import { LoginComponent } from './views/pages/login/login.component'
 import { RegisterComponent } from './views/pages/register/register.component';
 import {LogsComponent} from "./pages/logs/logs.component";
 import {ComputersComponent} from "./pages/computers/computers.component";
@@ -18,11 +18,12 @@ import {ConfigScheduleComponent} from "./views/dashboard/config-schedule/config-
 import {EditComputerComponent} from "./pages/computers/edit-computer/edit-computer.component";
 import {AddGroupComponent} from "./pages/computers/add-group/add-group.component";
 import {ChangeGroupComponent} from "./pages/computers/change-group/change-group.component";
+import {AuthorizationComponent} from "./pages/authorization/authorization.component";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'authorization',
     pathMatch: 'full'
   },
   {
@@ -61,6 +62,8 @@ const routes: Routes = [
         component: ConfigScheduleComponent},
       {path: 'computers/editcomputer',
       component: EditComputerComponent},
+      {path: 'auth',
+        component:AuthorizationComponent},
 
 
       {
@@ -126,9 +129,9 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginPageComponent,
+    component: LoginComponent,
     data: {
-      title: 'Login Page'
+      title: 'Login'
     }
   },
   {
