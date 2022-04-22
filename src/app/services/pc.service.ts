@@ -20,6 +20,6 @@ export class PcService{
   }
 
   public findAll(): Observable<Computer[]>{
-    return  this.http.get<Computer[]>(environment.api + '/api/users',this.options);
+    return  this.http.get<Computer[]>(environment.api + '/api/Computer',this.options);
   }
 }

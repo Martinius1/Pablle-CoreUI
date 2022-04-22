@@ -20,19 +20,19 @@ export class ComputersService {
   }
 
   public findAll(): Observable<Computer[]> {
-    return this.http.get<Computer[]>(environment.api + '/api/computers/', this.options);
+    return this.http.get<Computer[]>(environment.api + '/api/Computer/', this.options);
   }
 
   public findById(id: number): Observable<Computer> {
-    return this.http.get<Computer>(environment.api + '/api/computers/' + id, this.options);
+    return this.http.get<Computer>(environment.api + '/api/Computer/' + id, this.options);
   }
 
-  public save(user: Computer): Observable<Computer> {
-    if (user.id) {
-      return this.http.put<Computer>(environment.api + '/api/computers/' + user.id, user, this.options);
+  public save(computer: Computer): Observable<Computer> {
+    if (computer.id) {
+      return this.http.put<Computer>(environment.api + '/api/Computer/' + computer.id, computer, this.options);
 
     } else {
-      return this.http.post<Computer>(environment.api + '/api/computers/', user, this.options);
+      return this.http.post<Computer>(environment.api + '/api/Computer/', computer, this.options);
     }
   }
 }

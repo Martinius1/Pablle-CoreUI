@@ -27,12 +27,12 @@ export class ConfigurationsService {
     return this.http.get<Group>(environment.api + '/api/groups/' + id, this.options);
   }
 
-  public save(user: Group): Observable<Group> {
-    if (user.id) {
-      return this.http.put<Group>(environment.api + '/api/groups/' + user.id, user, this.options);
+  public save(group: Group): Observable<Group> {
+    if (group.id) {
+      return this.http.put<Group>(environment.api + '/api/groups/' + group.id, group, this.options);
 
     } else {
-      return this.http.post<Group>(environment.api + '/api/groups/', user, this.options);
+      return this.http.post<Group>(environment.api + '/api/groups/', group, this.options);
     }
   }
 }

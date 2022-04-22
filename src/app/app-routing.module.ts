@@ -9,7 +9,6 @@ import { RegisterComponent } from './views/pages/register/register.component';
 import {LogsComponent} from "./pages/logs/logs.component";
 import {ComputersComponent} from "./pages/computers/computers.component";
 import {RequestsComponent} from "./pages/requests/requests.component";
-import {ComputersListComponent} from "./pages/requests/requests.component";
 import {MsgLogComponent} from "./pages/logs/msg-log/msg-log.component";
 import {AlertLogComponent} from "./pages/logs/alert-log/alert-log.component";
 import {ConfigAddComponent} from "./views/dashboard/config-add/config-add.component";
@@ -19,6 +18,7 @@ import {EditComputerComponent} from "./pages/computers/edit-computer/edit-comput
 import {AddGroupComponent} from "./pages/computers/add-group/add-group.component";
 import {ChangeGroupComponent} from "./pages/computers/change-group/change-group.component";
 import {AuthorizationComponent} from "./pages/authorization/authorization.component";
+import {TestComponent} from "./pages/test/test.component";
 
 const routes: Routes = [
   {
@@ -48,8 +48,8 @@ const routes: Routes = [
       component: AddGroupComponent},
       {path: 'requests',
         component: RequestsComponent},
-      {path: 'computers',
-        component: ComputersListComponent},
+      {path: 'test',
+        component: TestComponent},
       {path: 'logs/messages',
         component: MsgLogComponent},
       {path: 'logs/alert',
