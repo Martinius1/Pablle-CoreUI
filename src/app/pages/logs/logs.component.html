@@ -1,12 +1,3 @@
-<ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
-<pre>Month: {{ date.month }}.{{ date.year }}</pre>
-<pre>Model: {{ model | json }}</pre>
-<button class="btn btn-sm btn-outline-primary me-2" (click)="selectToday()">Select Today</button>
-<button class="btn btn-sm btn-outline-primary me-2" (click)="dp.navigateTo()">To current month</button>
-<button class="btn btn-sm btn-outline-primary me-2" (click)="dp.navigateTo({year: 2013, month: 2})">To Feb 2013</button>
-
-
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-9">
@@ -14,21 +5,22 @@
         <div class="card-header ">
           <h3 class="what">
             <button class="btn btn-sm btn-primary float-end" data-bs-toggle="modal" data-bs-target="#MailSetPopup"><svg cIcon class="me-2" name="cilSettings"></svg>Set</button>
-            <button class="btn btn-sm btn-primary float-end" style="margin-right:0.3vw" (click)=toogleTag()>Message/alerts</button>
+            <div class="btn-group float-end" style="margin-right: 0.3vw" role="group" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+              <label ngbButtonLabel class="btn-primary btn-sm">
+                <input ngbButton type="radio" class="btn-check" id="test" [value]="1"> message
+              </label>
+              <label ngbButtonLabel class="btn-primary btn-sm">
+                <input ngbButton type="radio" class="btn-check" id="test2" [value]="2" >alerts
+              </label>
+            </div>
+            <div *ngIf="model == 1"  >
+              <app-msg-log></app-msg-log>
+            </div>
+            <div *ngIf="model != 1">
+              <app-alert-log></app-alert-log>
+            </div>
           </h3>
         </div>
-
-<div *ngIf="showMe==false" class="monthly">
-  1
-</div>
-
-
-
-<div *ngIf="showMe!=false" class="weekly" >
-  2
-</div>
-
-
       </div>
     </div>
   </div>
