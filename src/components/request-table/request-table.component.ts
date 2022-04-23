@@ -12,15 +12,20 @@ export class RequestTableComponent implements OnInit {
   public computers: Computer[] = [];
 
   @Output()
-  public selected: EventEmitter<Computer> = new EventEmitter<Computer>();
+  public allowed: EventEmitter<Computer> = new EventEmitter<Computer>();
+  @Output()
+  public deleted: EventEmitter<Computer> = new EventEmitter<Computer>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public clicked(computer: Computer): void {
-    this.selected.emit(computer);
+  public allow(computer: Computer): void {
+    this.allowed.emit(computer);
+  }
+  public delete(computer: Computer): void {
+    this.deleted.emit(computer);
   }
 
 }
