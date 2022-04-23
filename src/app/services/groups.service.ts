@@ -8,7 +8,7 @@ import {SessionsService} from "./sessions.service";
 @Injectable({
   providedIn: 'root'
 })
-export class ConfigurationsService {
+export class GroupsService {
 
   constructor(private http: HttpClient,
               private sessions: SessionsService) { }
@@ -20,19 +20,19 @@ export class ConfigurationsService {
   }
 
   public findAll(): Observable<Group[]> {
-    return this.http.get<Group[]>(environment.api + '/api/groups/', this.options);
+    return this.http.get<Group[]>(environment.api + '/api/Group/', this.options);
   }
 
   public findById(id: number): Observable<Group> {
-    return this.http.get<Group>(environment.api + '/api/groups/' + id, this.options);
+    return this.http.get<Group>(environment.api + '/api/Group/' + id, this.options);
   }
 
   public save(group: Group): Observable<Group> {
     if (group.id) {
-      return this.http.put<Group>(environment.api + '/api/groups/' + group.id, group, this.options);
+      return this.http.put<Group>(environment.api + '/api/Group/' + group.id, group, this.options);
 
     } else {
-      return this.http.post<Group>(environment.api + '/api/groups/', group, this.options);
+      return this.http.post<Group>(environment.api + '/api/Group/', group, this.options);
     }
   }
 }

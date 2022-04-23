@@ -8,7 +8,7 @@ import {SessionsService} from "./sessions.service";
 @Injectable({
   providedIn: 'root'
 })
-export class ConfigurationsService {
+export class SourcesService {
 
   constructor(private http: HttpClient,
               private sessions: SessionsService) { }

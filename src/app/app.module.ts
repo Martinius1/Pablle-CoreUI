@@ -73,7 +73,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, LogsComponent, ComputersComponent, RequestsComponent, AlertLogComponent, MsgLogComponent, EditComputerComponent, ChangeGroupComponent, AuthorizationComponent, TestComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, LogsComponent, ComputersComponent, RequestsComponent, ComputersComponent, AlertLogComponent, MsgLogComponent, EditComputerComponent, ChangeGroupComponent, AuthorizationComponent, TestComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

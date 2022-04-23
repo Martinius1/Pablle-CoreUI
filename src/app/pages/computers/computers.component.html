@@ -8,13 +8,8 @@
 
         </div>
         <div class="card-body">
-          <div class="list-group">
-            <button class="list-group-item list-group-item-action" type="button" aria-current="true">HR<button class="btn btn-sm btn-primary float-end" routerLink="/computers/addgroup"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></button>
-            <button class="list-group-item list-group-item-action" type="button" aria-current="true">Engineering<button class="btn btn-sm btn-primary float-end" routerLink="/computers/addgroup"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></button>
-            <button class="list-group-item list-group-item-action" type="button" aria-current="true">Finances<button class=" btn btn-sm btn-primary float-end" routerLink="/computers/addgroup"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></button>
-            <button class="list-group-item list-group-item-action" type="button" aria-current="true">Research<button class="btn btn-sm btn-primary float-end" routerLink="/computers/addgroup"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></button>
-            <button class="list-group-item list-group-item-action" type="button" aria-current="true">Production<button class="btn btn-sm btn-primary float-end" routerLink="/computers/addgroup"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></button>
-            <button class="list-group-item list-group-item-action" type="button" aria-current="true">Kitchen<button class="btn btn-sm btn-primary float-end" routerLink="/computers/addgroup"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></button>
+          <div class="list-group" *ngFor="let group of groups">
+            <button class="list-group-item list-group-item-action" type="button" aria-current="true">{{ group.name }}<button class="btn btn-sm btn-primary float-end" routerLink="/computers/addgroup"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></button>
           </div>
         </div>
         <div class="mat-card-footer list-group-item-action">
@@ -31,7 +26,26 @@
         </div>
         <div class="card-body">
           <div class="table-computer scrollable">
-            <app-computer-table></app-computer-table>
+            <table class="table table-borderless table-hover">
+              <thead>
+              <tr class="table2 fixed">
+                <th scope="col">Computer</th>
+                <th scope="col">Nickname</th>
+                <th scope="col">IP</th>
+                <th scope="col">MAC</th>
+                <th scope="col"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr class="column1" *ngFor="let computer of computers">
+                <td>{{ computer.id }}</td>
+                <td>{{ computer.name }}</td>
+                <td>{{ computer.ip }}</td>
+                <td>{{ computer.mac }}</td>
+                <td><button class="btn bg-light mat-raised-button" routerLink="/computers/editcomputer"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
