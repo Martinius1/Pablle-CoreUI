@@ -32,6 +32,8 @@ export class ComputersService {
 
   public save(computer: Computer): Observable<Computer> {
     if (computer.id) {
+      console.log(computer.id);
+      console.log(computer.name);
       return this.http.put<Computer>(environment.api + '/api/Computer/' + computer.id, computer, this.options);
 
     } else {

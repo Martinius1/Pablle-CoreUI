@@ -25,8 +25,8 @@ export class ComputersComponent implements OnInit {
     this.groupsService.findAll().subscribe(data => this.groups = data);
   }
 
-  public edit(computer: Computer): void {
-
+  public edit(computer:Computer): void {
+    this.router.navigate([ 'computers', computer.id ]);
   }
 
 }

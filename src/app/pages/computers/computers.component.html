@@ -5,10 +5,10 @@
         <div class="mat-card-header bg-light list-group-item-action">
           <button class="btn" type="button" routerLink="/dashboard" aria-current="true">All Computers
             <svg cIcon class="me-2" name="cilHome"></svg></button>
-
         </div>
         <app-group-list [groups]="groups"></app-group-list>
         <div class="mat-card-footer list-group-item-action">
+
           <button class="btn" type="button" routerLink="/computers/editgroup" aria-current="true">Add Group <app-add-icon></app-add-icon></button>
         </div>
       </div>
@@ -22,7 +22,7 @@
         </div>
         <div class="card-body">
           <div class="table-computer scrollable">
-            <app-computer-table [computers]="computers"></app-computer-table>
+            <app-computer-table [computers]="computers" (selected)="edit($event)"></app-computer-table>
           </div>
         </div>
       </div>

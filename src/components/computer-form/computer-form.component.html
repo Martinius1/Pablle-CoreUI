@@ -1,0 +1,52 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="shadow button-bar card border-top-primary border-top-3 mb-3">
+    <div class="card-header list-group-item-action">
+      <button class="btn" type="text" aria-current="true">Edit Computer<svg cIcon class="me-2" name="cilPencil"></svg></button>
+    </div>
+    <div class="form-group input-group margin-top disabled">
+      <label for="PC" class="col-sm-2 col-form-label cor-form-center" style="display: block; text-align: center;">PC</label>
+      <div class="col-sm-9">
+        <input type="name" class=" form-control-xl  form-control" id="PC" placeholder="PCID" disabled>
+      </div>
+    </div>
+    <div class="input-group form-group margin-top" >
+      <label for="nickname" class="col-form-label col-sm-2 cor-form-center" style="display: block; text-align: center;">Nick Name</label>
+      <div class="col-sm-9">
+        <input formControlName="username" type="text" class=" form-control-xl form-control" id="nickname" placeholder="rename">
+      </div>
+    </div>
+    <div class="form-group input-group margin-top ">
+      <label for="IP" class="col-sm-2 col-form-label cor-form-center" style="display: block; text-align: center;">IP</label>
+      <div class="col-sm-9">
+        <input formControlName="ip" type="text" class=" form-control-xl  form-control" id="IP" placeholder="198.67.5.99">
+      </div>
+    </div>
+    <div class="form-group input-group margin-top">
+      <label for="MAC" class="col-sm-2 col-form-label cor-form-center" style="display: block; text-align: center;">MAC</label>
+      <div class="col-sm-9">
+        <input formControlName="mac" type="text" class=" form-control-xl  form-control" id="MAC" placeholder="10:92:AB:23:98">
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
+<div class="input-group form-group margin-top" >
+  <label for="group" class="col-form-label col-sm-2 cor-form-center" style="display: block; text-align: center;">Groups</label>
+  <div class="col-sm-9" >
+    <div class="" id="group">
+      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group1<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
+      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group2<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
+      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group3<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
+      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group4<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
+      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group5<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
+      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group6<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
+    </div>
+  </div>
+  <button type="button" class="btn btn-outline-secondary bg-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
+</div>
+<button class="list-group-item list-group-item-action margin-top" type="button" aria-current="true">
+  <button class="btn btn btn-secondary bg-light" routerLink="/computers">Cancel</button>
+  <button type="submit" class="btn btn btn-primary float-end" routerLink="/computers">Save</button>
+</button>

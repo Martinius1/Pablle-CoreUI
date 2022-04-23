@@ -14,7 +14,7 @@
     <td>{{ computer.name }}</td>
     <td>{{ computer.ip }}</td>
     <td>{{ computer.mac }}</td>
-    <td><button class="btn bg-light mat-raised-button" routerLink="/computers/editcomputer"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></td>
+    <td><button class="btn bg-light mat-raised-button" (click)="edit(computer)"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></td>
   </tr>
   </tbody>
 </table>

@@ -57,10 +57,9 @@ const routes: Routes = [
         component: ConfigTypeComponent},
       {path: 'dashboard/configschedule',
         component: ConfigScheduleComponent},
-      {path: 'computers/editcomputer',
-      component: EditComputerComponent},
       {path: 'auth',
         component:AuthorizationComponent},
+      { path: 'computers/:id', component: EditComputerComponent },
 
 
       {
