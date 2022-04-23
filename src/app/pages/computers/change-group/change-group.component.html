@@ -47,100 +47,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <table class="table table-borderless table-hover">
-          <thead>
-          <tr class="table2 fixed">
-            <th scope="col">Computer</th>
-            <th scope="col">Nickname</th>
-            <th scope="col">IP</th>
-            <th scope="col">MAC</th>
-            <th scope="col"></th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr class="column1">
-            <td>1</td>
-            <td>Main PC</td>
-            <td>198.67.5.99</td>
-            <td>10:92:AB:23:98</td>
-            <div class="custom-control custom-checkbox justify-content-center">
-              <input type="checkbox" class="custom-control-input" id="customCheck1">
-            </div>
-          </tr>
-          <tr class="column2">
-            <td>3</td>
-            <td>Better PC</td>
-            <td>158.11.5.45</td>
-            <td>10:92:AB:23:98</td>
-            <div class="custom-control custom-checkbox justify-content-center">
-              <input type="checkbox" class="custom-control-input" id="customCheck2">
-            </div>
-          </tr>
-          <tr class="column3">
-            <td>45</td>
-            <td>Server Mainframe</td>
-            <td>155.11.22.52</td>
-            <td>10:92:AB:23:98</td>
-            <div class="custom-control custom-checkbox justify-content-center">
-              <input type="checkbox" class="custom-control-input" id="customCheck3">
-            </div>
-          </tr>
-          <tr class="column4">
-            <td>55</td>
-            <td>Main PC</td>
-            <td>198.67.5.99</td>
-            <td>10:92:AB:23:98</td>
-            <div class="custom-control custom-checkbox justify-content-center">
-              <input type="checkbox" class="custom-control-input" id="customCheck4">
-            </div>
-          </tr>
-          <tr class="column5">
-            <td>99</td>
-            <td>Better PC</td>
-            <td>158.11.5.45</td>
-            <td>10:92:AB:23:98</td>
-            <div class="custom-control custom-checkbox justify-content-center">
-              <input type="checkbox" class="custom-control-input" id="customCheck5">
-            </div>
-          </tr>
-          <tr class="column6">
-            <td>69</td>
-            <td>Server Mainframe</td>
-            <td>155.11.22.52</td>
-            <td>10:92:AB:23:98</td>
-            <div class="custom-control custom-checkbox justify-content-center">
-              <input type="checkbox" class="custom-control-input" id="customCheck6">
-            </div>
-          </tr>
-          <tr class="column7">
-            <td>96</td>
-            <td>Main PC</td>
-            <td>198.67.5.99</td>
-            <td>10:92:AB:23:98</td>
-            <div class="custom-control custom-checkbox justify-content-center">
-              <input type="checkbox" class="custom-control-input" id="customCheck7">
-            </div>
-          </tr>
-          <tr class="column8">
-            <td>12</td>
-            <td>Better PC</td>
-            <td>158.11.5.45</td>
-            <td>10:92:AB:23:98</td>
-            <div class="custom-control custom-checkbox justify-content-center">
-              <input type="checkbox" class="custom-control-input" id="customCheck8">
-            </div>
-          </tr>
-          <tr class="column9">
-            <td>21</td>
-            <td>Server Mainframe</td>
-            <td>155.11.22.52</td>
-            <td>10:92:AB:23:98</td>
-            <div class="custom-control custom-checkbox justify-content-center">
-              <input type="checkbox" class="custom-control-input" id="customCheck9">
-            </div>
-          </tr>
-          </tbody>
-        </table>
+
+        <app-table-add-pc></app-table-add-pc>
+
+
         <nav class="navbar navbar-light">
           <form class="form-inline input-group">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -148,6 +58,7 @@
           </form>
         </nav>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary bg-light" data-bs-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirm</button>
@@ -155,3 +66,4 @@
     </div>
   </div>
 </div>
+

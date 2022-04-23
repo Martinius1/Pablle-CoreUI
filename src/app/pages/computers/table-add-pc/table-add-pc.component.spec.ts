@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddGroupComponent } from './add-group.component';
+import { TableAddPcComponent } from './table-add-pc.component';
 
-describe('AddGroupComponent', () => {
-  let component: AddGroupComponent;
-  let fixture: ComponentFixture<AddGroupComponent>;
+describe('TableAddPcComponent', () => {
+  let component: TableAddPcComponent;
+  let fixture: ComponentFixture<TableAddPcComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddGroupComponent ]
+      declarations: [ TableAddPcComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddGroupComponent);
+    fixture = TestBed.createComponent(TableAddPcComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

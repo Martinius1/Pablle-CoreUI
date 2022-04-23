@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {
   AvatarModule,
@@ -28,28 +28,32 @@ import { ConfigAddSourceComponent } from './config-add/config-add-source/config-
 import { ConfigAddDestinationComponent } from './config-add/config-add-destination/config-add-destination.component';
 import { ConfigAddScheduleComponent } from './config-add/config-add-schedule/config-add-schedule.component';
 import { ConfigAddTypeComponent } from './config-add/config-add-type/config-add-type.component';
+import {NgbDatepickerModule, NgbTimepickerModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
-    imports: [
-        DashboardRoutingModule,
-        CardModule,
-        NavModule,
-        IconModule,
-        TabsModule,
-        CommonModule,
-        GridModule,
-        ProgressModule,
-        ReactiveFormsModule,
-        ButtonModule,
-        FormModule,
-        ButtonModule,
-        ButtonGroupModule,
-        ChartjsModule,
-        AvatarModule,
-        TableModule,
-        WidgetsModule,
-        DocsComponentsModule
-    ],
+  imports: [
+    DashboardRoutingModule,
+    CardModule,
+    NavModule,
+    IconModule,
+    TabsModule,
+    CommonModule,
+    GridModule,
+    ProgressModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    FormModule,
+    ButtonModule,
+    ButtonGroupModule,
+    ChartjsModule,
+    AvatarModule,
+    TableModule,
+    WidgetsModule,
+    DocsComponentsModule,
+    NgbDatepickerModule,
+    NgbTimepickerModule,
+    FormsModule
+  ],
   declarations: [DashboardComponent, ConfigAddComponent, ConfigTypeComponent, ConfigScheduleComponent, ConfigAddComputersComponent, ConfigAddSourceComponent, ConfigAddDestinationComponent, ConfigAddScheduleComponent, ConfigAddTypeComponent]
 })
 export class DashboardModule {
