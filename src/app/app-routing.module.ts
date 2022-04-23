@@ -15,7 +15,6 @@ import {ConfigAddComponent} from "./views/dashboard/config-add/config-add.compon
 import {ConfigTypeComponent} from "./views/dashboard/config-type/config-type.component";
 import {ConfigScheduleComponent} from "./views/dashboard/config-schedule/config-schedule.component";
 import {EditComputerComponent} from "./pages/computers/edit-computer/edit-computer.component";
-import {AddGroupComponent} from "./pages/computers/add-group/add-group.component";
 import {ChangeGroupComponent} from "./pages/computers/change-group/change-group.component";
 import {AuthorizationComponent} from "./pages/authorization/authorization.component";
 import {TestComponent} from "./pages/test/test.component";
@@ -44,8 +43,6 @@ const routes: Routes = [
         component: ComputersComponent },
       {path: 'computers/editgroup',
       component: ChangeGroupComponent},
-      {path: 'computers/addgroup',
-      component: AddGroupComponent},
       {path: 'requests',
         component: RequestsComponent},
       {path: 'test',
