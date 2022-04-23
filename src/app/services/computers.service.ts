@@ -26,6 +26,9 @@ export class ComputersService {
   public findById(id: number): Observable<Computer> {
     return this.http.get<Computer>(environment.api + '/api/Computer/' + id, this.options);
   }
+  public delete(id: number): void {
+    this.http.delete<Computer>(environment.api + '/api/Computer/' + id, this.options).subscribe();
+  }
 
   public save(computer: Computer): Observable<Computer> {
     if (computer.id) {

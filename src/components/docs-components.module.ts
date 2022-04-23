@@ -11,6 +11,7 @@ import { AddIconComponent } from './icon-compoments/add-icon/add-icon.component'
 import { LocationTableComponent } from './location-table/location-table.component';
 import { RequestTableComponent } from './request-table/request-table.component';
 import { ComputerTableComponent } from './computer-table/computer-table.component';
+import { GroupListComponent } from './group-list/group-list.component';
 
 @NgModule({
   declarations: [
@@ -20,17 +21,19 @@ import { ComputerTableComponent } from './computer-table/computer-table.componen
     AddIconComponent,
     LocationTableComponent,
     RequestTableComponent,
-    ComputerTableComponent
+    ComputerTableComponent,
+    GroupListComponent
   ],
-  exports: [
-    DocsExampleComponent,
-    DocsLinkComponent,
-    DocsCalloutComponent,
-    AddIconComponent,
-    LocationTableComponent,
-    RequestTableComponent,
-    ComputerTableComponent
-  ],
+    exports: [
+        DocsExampleComponent,
+        DocsLinkComponent,
+        DocsCalloutComponent,
+        AddIconComponent,
+        LocationTableComponent,
+        RequestTableComponent,
+        ComputerTableComponent,
+        GroupListComponent
+    ],
   imports: [
     CommonModule,
     NavModule,

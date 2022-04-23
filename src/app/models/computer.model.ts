@@ -4,5 +4,5 @@ export class Computer {
   public name: string = '';
   public ip: string = '';
   public mac: string = '';
-  public allowed: number = 0;
+  public allowed: boolean = false;
 }

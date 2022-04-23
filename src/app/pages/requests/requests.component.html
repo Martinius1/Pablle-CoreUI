@@ -6,24 +6,21 @@
           <button class="btn" type="button" aria-current="true">Requests
             <svg cIcon class="me-2" name="cilHome"></svg></button>
 
-        </div>
-        <div class="card-body">
-          <div class="list-group" *ngFor="let computer of computers">
-            <button class="list-group-item list-group-item-action" type="button" aria-current="true">{{ computer.name }}<button class="btn btn-sm btn-light float-end">Deny</button><button class="ys btn btn-sm btn-primary float-end">Accept</button></button>
 
-          </div>
-        </div>
+        <app-request-table [computers]="computers" (allowed)="allow($event)" (deleted)="delete($event)"></app-request-table>
+
         <div class="mat-card-footer list-group-item-action">
 
         </div>
 
 
+        </div>
       </div>
-    </div>
-    <div class="col-auto">
+      <div class="col-auto">
 
-      <div class="row">
-        <div class="col-4">
+        <div class="row">
+          <div class="col-4">
+          </div>
         </div>
       </div>
     </div>
