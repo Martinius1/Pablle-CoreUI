@@ -39,4 +39,31 @@
 </div>
 
 <!-- Modal -->
-<app-table-add-pc></app-table-add-pc>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header card-header list-group-item-action">
+        <button class="btn " type="text" aria-current="true">Add computer</button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <app-table-add-pc></app-table-add-pc>
+
+
+        <nav class="navbar navbar-light">
+          <form class="form-inline input-group">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary bg-light" type="submit">Search</button>
+          </form>
+        </nav>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary bg-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
