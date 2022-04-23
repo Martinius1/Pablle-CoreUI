@@ -21,7 +21,7 @@ export class ComputersComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.service.findAll().subscribe(data => this.computers = data);
+    this.service.findAll().subscribe(data => this.computers = data.filter((value:Computer)=>value.allowed));
     this.groupsService.findAll().subscribe(data => this.groups = data);
   }
 
