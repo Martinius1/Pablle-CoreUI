@@ -18,7 +18,7 @@ export class SessionsService {
 
   public login(credentials: any): Observable<boolean> {
     return this.http.post<boolean>(environment.api + '/api/sessions', credentials).pipe(
-      tap((value: any) => this.save(value.token)),
+      tap((value: any) => this.save(value)),
       map(() => true),
       catchError(err => {
         if (err.status !== 401)

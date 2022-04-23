@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+    import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {SessionsService} from '../../../services/sessions.service';
 import {Router} from "@angular/router";
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   public submit(): void {
     this.service.login(this.form.value).subscribe(result => {
       if (result) {
-        this.router.navigate([ '/' ]);
+        this.router.navigate([ '/dashboard' ]);
       }
     });
   }
