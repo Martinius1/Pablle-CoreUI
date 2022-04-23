@@ -27,12 +27,12 @@ export class ConfigurationsService {
     return this.http.get<Source>(environment.api + '/api/sources/' + id, this.options);
   }
 
-  public save(user: Source): Observable<Source> {
-    if (user.id) {
-      return this.http.put<Source>(environment.api + '/api/sources/' + user.id, user, this.options);
+  public save(source: Source): Observable<Source> {
+    if (source.id) {
+      return this.http.put<Source>(environment.api + '/api/sources/' + source.id, source, this.options);
 
     } else {
-      return this.http.post<Source>(environment.api + '/api/sources/', user, this.options);
+      return this.http.post<Source>(environment.api + '/api/sources/', source, this.options);
     }
   }
 }

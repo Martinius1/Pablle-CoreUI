@@ -53,13 +53,14 @@ import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { LogsComponent } from './pages/logs/logs.component';
 import { ComputersComponent } from './pages/computers/computers.component';
 import { RequestsComponent } from './pages/requests/requests.component';
-import { ComputersListComponent } from './pages/requests/requests.component';
 import { AlertLogComponent } from './pages/logs/alert-log/alert-log.component';
 import { MsgLogComponent } from './pages/logs/msg-log/msg-log.component';
+import { HttpClientModule } from '@angular/common/http';
 import { EditComputerComponent } from './pages/computers/edit-computer/edit-computer.component';
 import { ChangeGroupComponent } from './pages/computers/change-group/change-group.component';
 import {DocsComponentsModule} from "@docs-components/docs-components.module";
 import { AuthorizationComponent } from './pages/authorization/authorization.component';
+import { TestComponent } from './pages/test/test.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -72,7 +73,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, LogsComponent, ComputersComponent, RequestsComponent, AlertLogComponent, MsgLogComponent, EditComputerComponent, ChangeGroupComponent, ComputersListComponent, AuthorizationComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, LogsComponent, ComputersComponent, RequestsComponent, AlertLogComponent, MsgLogComponent, EditComputerComponent, ChangeGroupComponent, AuthorizationComponent, TestComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -103,6 +104,7 @@ const APP_CONTAINERS = [
     DocsComponentsModule,
     NgbModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [
     {

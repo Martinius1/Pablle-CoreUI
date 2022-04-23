@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Computer} from "../../app/models/computer.model";
 
 @Component({
   selector: 'app-request-table',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestTableComponent implements OnInit {
 
+  @Input()
+  public computers: Computer[] = [];
+
+  @Output()
+  public selected: EventEmitter<Computer> = new EventEmitter<Computer>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public clicked(computer: Computer): void {
+    this.selected.emit(computer);
   }
 
 }

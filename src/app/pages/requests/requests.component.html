@@ -7,7 +7,12 @@
             <svg cIcon class="me-2" name="cilHome"></svg></button>
 
         </div>
-        <app-request-table></app-request-table>
+        <div class="card-body">
+          <div class="list-group" *ngFor="let computer of computers">
+            <button class="list-group-item list-group-item-action" type="button" aria-current="true">{{ computer.name }}<button class="btn btn-sm btn-light float-end">Deny</button><button class="ys btn btn-sm btn-primary float-end">Accept</button></button>
+
+          </div>
+        </div>
         <div class="mat-card-footer list-group-item-action">
 
         </div>
