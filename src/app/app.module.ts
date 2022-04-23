@@ -61,7 +61,6 @@ import { ChangeGroupComponent } from './pages/computers/change-group/change-grou
 import {DocsComponentsModule} from "@docs-components/docs-components.module";
 import { AuthorizationComponent } from './pages/authorization/authorization.component';
 import { TestComponent } from './pages/test/test.component';
-import { TableAddPcComponent } from './pages/computers/table-add-pc/table-add-pc.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -74,7 +73,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, LogsComponent, ComputersComponent, RequestsComponent, AlertLogComponent, MsgLogComponent, EditComputerComponent, ChangeGroupComponent, AuthorizationComponent, TestComponent, TableAddPcComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, LogsComponent, ComputersComponent, RequestsComponent, AlertLogComponent, MsgLogComponent, EditComputerComponent, ChangeGroupComponent, AuthorizationComponent, TestComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -120,9 +119,6 @@ const APP_CONTAINERS = [
     Title
   ],
   bootstrap: [AppComponent],
-  exports: [
-    TableAddPcComponent
-  ]
 })
 export class AppModule {
 }
