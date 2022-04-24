@@ -1,0 +1,18 @@
+<thead>
+<tr class="table2 fixed">
+  <th scope="col">Computer</th>
+  <th scope="col">Nickname</th>
+  <th scope="col">IP</th>
+  <th scope="col">MAC</th>
+  <th scope="col"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="column1" *ngFor="let computer of computers">
+  <td>{{ computer.id }}</td>
+  <td>{{ computer.name }}</td>
+  <td>{{ computer.ip }}</td>
+  <td>{{ computer.mac }}</td>
+  <td><button class="btn bg-light mat-raised-button"><svg cIcon class="me-2" name="cil-Trash"></svg>Remove</button></td>
+
+</tbody>
