@@ -29,6 +29,8 @@ import { ConfigAddDestinationComponent } from './config-add/config-add-destinati
 import { ConfigAddScheduleComponent } from './config-add/config-add-schedule/config-add-schedule.component';
 import { ConfigAddTypeComponent } from './config-add/config-add-type/config-add-type.component';
 import {NgbDatepickerModule, NgbTimepickerModule} from "@ng-bootstrap/ng-bootstrap";
+import {AppModule} from "../../app.module";
+import {DashboardTableComponent} from "../../../components/dashboard-table/dashboard-table.component";
 
 @NgModule({
   imports: [
@@ -52,9 +54,10 @@ import {NgbDatepickerModule, NgbTimepickerModule} from "@ng-bootstrap/ng-bootstr
     DocsComponentsModule,
     NgbDatepickerModule,
     NgbTimepickerModule,
-    FormsModule
+    FormsModule,
+    AppModule
   ],
-  declarations: [DashboardComponent, ConfigAddComponent, ConfigTypeComponent, ConfigScheduleComponent, ConfigAddComputersComponent, ConfigAddSourceComponent, ConfigAddDestinationComponent, ConfigAddScheduleComponent, ConfigAddTypeComponent]
+  declarations: [DashboardComponent, ConfigAddComponent, ConfigTypeComponent, ConfigScheduleComponent, ConfigAddComputersComponent, ConfigAddSourceComponent, ConfigAddDestinationComponent, ConfigAddScheduleComponent, ConfigAddTypeComponent, DashboardTableComponent]
 })
 export class DashboardModule {
 }

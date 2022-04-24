@@ -12,8 +12,7 @@ import { LocationTableComponent } from './location-table/location-table.componen
 import { RequestTableComponent } from './request-table/request-table.component';
 import { ComputerTableComponent } from './computer-table/computer-table.component';
 import { GroupListComponent } from './group-list/group-list.component';
-import { ComputerFormComponent } from './computer-form/computer-form.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import {ReactiveFormsModule} from "@angular/forms";
     RequestTableComponent,
     ComputerTableComponent,
     GroupListComponent,
-    ComputerFormComponent
   ],
   exports: [
     DocsExampleComponent,
@@ -36,18 +34,18 @@ import {ReactiveFormsModule} from "@angular/forms";
     RequestTableComponent,
     ComputerTableComponent,
     GroupListComponent,
-    ComputerFormComponent
   ],
-    imports: [
-        CommonModule,
-        NavModule,
-        IconModule,
-        RouterModule,
-        TabsModule,
-        UtilitiesModule,
-        CalloutModule,
-        ReactiveFormsModule
-    ]
+  imports: [
+    CommonModule,
+    NavModule,
+    IconModule,
+    RouterModule,
+    TabsModule,
+    UtilitiesModule,
+    CalloutModule,
+    ReactiveFormsModule,
+    FormsModule
+  ]
 })
 export class DocsComponentsModule {
 }
