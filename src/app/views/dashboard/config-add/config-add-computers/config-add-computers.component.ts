@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Computer} from "../../../../models/computer.model";
+import {Router} from "@angular/router";
+import {ComputersService} from "../../../../services/computers.service";
 
 @Component({
   selector: 'app-config-add-computers',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigAddComputersComponent implements OnInit {
 
-  constructor() { }
+  computers: Computer[] = [];
+
+  constructor(private router: Router,
+              private service: ComputersService,) {}
 
   ngOnInit(): void {
+
+    this.service.findAll().subscribe(data => this.computers = data);
   }
 
 }
