@@ -9,10 +9,6 @@
       <div class="button-schedule">
         <button class="button btn btn-primary mb-3" (click)=toogleTag() >Switch Time Input</button>
       </div>
-
-
-
-
       <div *ngIf="showMe==false" class="monthly">
         <div class="card">
           <div class="card-header">
@@ -21,16 +17,24 @@
           <div class="card-body">
             <div class="container">
               <div class="row mb-3">
-                <div class="col-6">
+                <div class="col-3">
                   <label for="date">Set date</label>
                 </div>
-                <div class="col-6">
-                  <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next" id="date"></ngb-datepicker>
+                <div class="col-6" id="date">
+                  <form class="row row-cols-sm-auto">
+                    <div class="col-6">
+                      <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd"
+                               name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker"
+                               [placement]="placement" [positionTarget]="buttonEl">
+                        <button #buttonEl class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
-
               <div class="row mb-3">
-                <div class="col-6">
+                <div class="col-3">
                   <label for="time">Set Time</label>
                 </div>
                 <div class="col-6" id="time">
@@ -41,10 +45,6 @@
           </div>
         </div>
       </div>
-
-
-
-
 
       <div *ngIf="showMe!=false" class="weekly" >
         <div class="card">

@@ -7,6 +7,7 @@ import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./config-add-schedule.component.scss']
 })
 export class ConfigAddScheduleComponent implements OnInit {
+  placement = 'right';
   time = {hour: 13, minute: 30};
   model!: NgbDateStruct;
   date!: {year: number, month: number};
