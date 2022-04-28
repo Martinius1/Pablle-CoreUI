@@ -4,8 +4,6 @@ import {Configuration} from "../../models/configuration.model";
 import {Router} from "@angular/router";
 import {ConfigurationsService} from "../../services/configurations.service";
 import { DashboardChartsData, IChartProps } from './dashboard-charts-data';
-import {Computer} from "../../models/computer.model";
-import {ComputersService} from "../../services/computers.service";
 
 interface IUser {
   name: string;
@@ -128,7 +126,7 @@ export class DashboardComponent implements OnInit {
     this.service.delete(configuration.id);
     this.remove(configuration);
   }
-  
+
   public remove(configuration: Configuration): void {
     var index = this.configurations.findIndex(x => x.id ==configuration.id);
     this.configurations.splice(index, 1);

@@ -55,6 +55,9 @@ import {DashboardTableComponent} from "../../../components/dashboard-table/dashb
     NgbTimepickerModule,
     FormsModule
   ],
+  exports: [
+    DashboardTableComponent
+  ],
   declarations: [DashboardComponent, ConfigAddComponent, ConfigTypeComponent, ConfigScheduleComponent, ConfigAddComputersComponent, ConfigAddSourceComponent, ConfigAddDestinationComponent, ConfigAddScheduleComponent, ConfigAddTypeComponent, DashboardTableComponent]
 })
 export class DashboardModule {

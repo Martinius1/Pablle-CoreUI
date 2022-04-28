@@ -67,6 +67,7 @@ import {
   ConfigAddComputersComponentComponent
 } from "@docs-components/config-add-computers-component/config-add-computers-component.component";
 import { HomeComponent } from './pages/home/home.component';
+import {DashboardModule} from "./views/dashboard/dashboard.module";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -111,6 +112,7 @@ const APP_CONTAINERS = [
     NgbModule,
     FormsModule,
     HttpClientModule,
+    DashboardModule,
   ],
   providers: [
     {

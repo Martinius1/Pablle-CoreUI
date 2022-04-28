@@ -1,1 +1,24 @@
-<p>home works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <div class="card border-top-primary border-top-3 mb-3">
+        <div class="card-header ">
+          <h3>
+            Configurations
+            <button class="btn btn-outline-secondary btn-sm float-end" style="background-color: lightgrey; color: black;"  routerLink="/dashboard/configadd">
+              Add Configuration <app-add-icon></app-add-icon>
+            </button>
+          </h3>
+        </div>
+        <div class="card-body">
+          <app-dashboard-table [configurations]="configurations" (deleted)="delete($event)"></app-dashboard-table>
+        </div>
+        <div class="row">
+          <div class="col-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

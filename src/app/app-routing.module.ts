@@ -18,11 +18,12 @@ import {ChangeGroupComponent} from "./pages/computers/change-group/change-group.
 import {AuthorizationComponent} from "./pages/authorization/authorization.component";
 import {TestComponent} from "./pages/test/test.component";
 import {ComputersComponent} from "./pages/computers/computers.component";
+import {HomeComponent} from "./pages/home/home.component";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'authorization',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -37,6 +38,8 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/dashboard/dashboard.module').then((m) => m.DashboardModule)
       },
+      {path:'home',
+      component:HomeComponent},
       {path: 'logs',
         component: LogsComponent},
       {path: 'computers',
@@ -136,8 +139,7 @@ const routes: Routes = [
     data: {
       title: 'Register Page'
     }
-  },
-  {path: '**', redirectTo: 'dashboard'}
+  }
 ];
 
 @NgModule({
