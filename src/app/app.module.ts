@@ -66,6 +66,7 @@ import {ComputerFormComponent} from "@docs-components/computer-form/computer-for
 import {
   ConfigAddComputersComponentComponent
 } from "@docs-components/config-add-computers-component/config-add-computers-component.component";
+import { HomeComponent } from './pages/home/home.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -78,7 +79,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, LogsComponent, ComputersComponent, RequestsComponent, AlertLogComponent, MsgLogComponent, EditComputerComponent, ChangeGroupComponent, AuthorizationComponent, TestComponent, TableAddPcComponent, ConfigAddComputersComponentComponent, ComputerFormComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, LogsComponent, ComputersComponent, RequestsComponent, AlertLogComponent, MsgLogComponent, EditComputerComponent, ChangeGroupComponent, AuthorizationComponent, TestComponent, TableAddPcComponent, ConfigAddComputersComponentComponent, ComputerFormComponent, HomeComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
