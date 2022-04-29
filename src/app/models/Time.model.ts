@@ -1,10 +1,9 @@
 import {Configuration} from "./configuration.model";
 
-
-export class Source {
+export class Time{
   public id: number = 0;
   public idConfig: number = 0;
-  public location: string = '';
+  public Cron: string = '';
 
-Configuration: Configuration  = new Configuration();
+  Configuration: Configuration  = new Configuration();
 }

@@ -1,3 +1,5 @@
+import {GroupComputer} from "./GroupComputer.model";
+import {ConfigurationAssignments} from "./ConfigurationAssignments.model";
 
 export class Computer {
   public id: number = 0;
@@ -5,4 +7,7 @@ export class Computer {
   public ip: string = '';
   public mac: string = '';
   public allowed: boolean = false;
+
+  GroupComputer: GroupComputer = new GroupComputer();
+  ConfigurationAssignments: ConfigurationAssignments = new ConfigurationAssignments();
 }
