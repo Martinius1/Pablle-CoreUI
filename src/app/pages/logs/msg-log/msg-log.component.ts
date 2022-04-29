@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { Report } from "../../../models/Report.model";
+import {Router} from "@angular/router";
+import {Computer} from "../../../models/computer.model";
+import {ReportsService} from "../../../services/reports.service";
 
 @Component({
   selector: 'app-msg-log',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MsgLogComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  public reports: Report[] = [];
+
+  constructor() {}
 
   ngOnInit(): void {
+
   }
 
 }

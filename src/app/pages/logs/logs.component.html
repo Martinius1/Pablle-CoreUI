@@ -14,7 +14,7 @@
               </label>
             </div>
             <div *ngIf="model == 1"  >
-              <app-msg-log></app-msg-log>
+              <app-msg-log [reports]="reports"></app-msg-log>
             </div>
             <div *ngIf="model != 1">
               <app-alert-log></app-alert-log>
