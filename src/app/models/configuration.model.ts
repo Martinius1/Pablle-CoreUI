@@ -12,9 +12,9 @@ export class Configuration {
   public packageCount: number = 0;
   public zip: number = 0;
 
-  Source: Source = new Source();
-  Destination: Destination = new Destination();
-  ConfigurationAssignments: ConfigurationAssignments = new ConfigurationAssignments();
-  Time: Time = new Time();
-  ConfigurationGroup: ConfigurationGroup = new ConfigurationGroup();
+  Source: Source [] = [];
+  Destination: Destination [] = [];
+  ConfigurationAssignments: ConfigurationAssignments [] = [];
+  Time: Time [] = [];
+  ConfigurationGroup: ConfigurationGroup [] = [];
 }

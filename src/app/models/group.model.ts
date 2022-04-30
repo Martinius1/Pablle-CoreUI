@@ -7,5 +7,5 @@ export class Group {
   public description: string = '';
 
   GroupComputer: GroupComputer[] = [];
-  ConfigurationGroup: ConfigurationGroup = new ConfigurationGroup();
+  ConfigurationGroup: ConfigurationGroup [] = [];
 }
