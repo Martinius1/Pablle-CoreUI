@@ -6,5 +6,5 @@ export class Report{
   public Date: string = '';
   public Result: string = '';
 
-  ConfigurationAssignments: ConfigurationAssignments = new ConfigurationAssignments();
+  configurationAssignments: ConfigurationAssignments = new ConfigurationAssignments();
 }

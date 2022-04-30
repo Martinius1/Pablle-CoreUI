@@ -6,6 +6,6 @@ export class Group {
   public name: string = '';
   public description: string = '';
 
-  GroupComputer: GroupComputer[] = [];
-  ConfigurationGroup: ConfigurationGroup [] = [];
+  groupComputers: GroupComputer[] = [];
+  configurationGroups: ConfigurationGroup [] = [];
 }

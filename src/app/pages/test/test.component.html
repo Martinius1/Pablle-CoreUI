@@ -1,7 +1,10 @@
 <p>test works!</p>
 
-<div *ngFor="let computer of computers">
-  <p>{{ computer.name }}</p>
+<div *ngFor="let configuration of configurations">
+  <p>{{ configuration.name }}</p>
+  <p *ngFor="let S of configuration.sources ">{{S.location }}</p>
+
+
 
 
 </div>

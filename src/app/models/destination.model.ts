@@ -6,5 +6,5 @@ export class Destination {
   public idConfig: number = 0;
   public location: string = '';
 
-  Configuration: Configuration = new Configuration();
+  configurations: Configuration = new Configuration();
 }

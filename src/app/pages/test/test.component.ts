@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Computer} from "../../models/computer.model";
 import {Router} from "@angular/router";
 import {PcService} from "../../services/pc.service";
+import {Configuration} from "../../models/configuration.model";
+import {ConfigurationsService} from "../../services/configurations.service";
 
 @Component({
   selector: 'app-test',
@@ -11,14 +13,14 @@ import {PcService} from "../../services/pc.service";
 export class TestComponent implements OnInit {
 
 
-  computers: Computer[] = [];
+  configurations: Configuration[] = [];
 
   constructor(private router: Router,
-              private service: PcService) {}
+              private service: ConfigurationsService) {}
 
   ngOnInit(): void {
 
-    this.service.findAll().subscribe(data => this.computers = data);
+    this.service.findAll().subscribe(data => this.configurations = data);
   }
 
 }

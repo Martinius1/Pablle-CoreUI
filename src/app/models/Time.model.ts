@@ -5,5 +5,5 @@ export class Time{
   public idConfig: number = 0;
   public Cron: string = '';
 
-  Configuration: Configuration  = new Configuration();
+  configurations: Configuration  = new Configuration();
 }
