@@ -5,6 +5,6 @@ export class GroupComputer {
   public GroupId: number = 0;
   public ComputerId: number = 0;
 
-  groups: Group = new Group();
-  computers: Computer = new Computer();
+  public groups: Group = new Group();
+  public computers: Computer = new Computer();
 }

@@ -16,9 +16,9 @@ export class Configuration  {
 
 
 
-  sources: Source [] = [];
-  destinations: Destination [] = [];
-  configurationAssignments: ConfigurationAssignments [] = [];
-  times: Time [] = [];
-  configurationGroups: ConfigurationGroup [] = [];
+  public sources: Source [] = [];
+  public destinations: Destination [] = [];
+  public configurationAssignments: ConfigurationAssignments [] = [];
+  public times: Time [] = [];
+  public configurationGroups: ConfigurationGroup [] = [];
 }

@@ -7,7 +7,7 @@ export class ConfigurationAssignments{
   public ComputerId: number = 0;
   public ConfigId: number  = 0;
 
-  reports: Report [] = [];
-  computers: Computer = new Computer();
-  configurations: Configuration = new Configuration();
+  public reports: Report [] = [];
+  public computers: Computer = new Computer();
+  public configurations: Configuration = new Configuration();
 }

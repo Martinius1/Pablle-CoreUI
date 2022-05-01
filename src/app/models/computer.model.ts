@@ -8,6 +8,6 @@ export class Computer {
   public mac: string = '';
   public allowed: boolean = false;
 
-  groupComputers: GroupComputer [] = [];
-  configurationAssignments: ConfigurationAssignments[] = [];
+  public groupComputers: GroupComputer [] = [];
+  public configurationAssignments: ConfigurationAssignments[] = [];
 }

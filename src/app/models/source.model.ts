@@ -9,5 +9,5 @@ export class Source{
 
 
 
-configurations: Configuration  = new Configuration();
+  public configurations: Configuration  = new Configuration();
 }
