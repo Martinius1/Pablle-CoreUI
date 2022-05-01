@@ -1,0 +1,23 @@
+<table class="table table-borderless table-hover">
+  <thead>
+  <tr class="table2 fixed">
+    <th scope="col">Computer</th>
+    <th scope="col">Nickname</th>
+    <th scope="col">IP</th>
+    <th scope="col">MAC</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="column1" *ngFor="let computers of computers">
+    <td>{{ computers.id }}</td>
+    <td>{{ computers.name }}</td>
+    <td>{{ computers.ip }}</td>
+    <td>{{ computers.mac }}</td>
+    <div class="custom-control custom-checkbox justify-content-center">
+      <input type="checkbox" class="custom-control-input" id="customCheck1">
+    </div>
+  </tr>
+
+  </tbody>
+</table>

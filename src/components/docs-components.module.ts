@@ -13,6 +13,7 @@ import { RequestTableComponent } from './request-table/request-table.component';
 import { ComputerTableComponent } from './computer-table/computer-table.component';
 import { GroupListComponent } from './group-list/group-list.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CheckboxTableComponent } from './checkbox-table/checkbox-table.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     RequestTableComponent,
     ComputerTableComponent,
     GroupListComponent,
+    CheckboxTableComponent,
   ],
   exports: [
     DocsExampleComponent,
@@ -34,6 +36,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     RequestTableComponent,
     ComputerTableComponent,
     GroupListComponent,
+    CheckboxTableComponent,
   ],
   imports: [
     CommonModule,
