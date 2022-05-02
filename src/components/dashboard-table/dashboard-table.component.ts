@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Configuration} from "../../app/models/configuration.model";
-import {Computer} from "../../app/models/computer.model";
+import {configuration} from "../../app/models/configuration.model";
 
 @Component({
   selector: 'app-dashboard-table',
@@ -10,17 +9,17 @@ import {Computer} from "../../app/models/computer.model";
 export class DashboardTableComponent implements OnInit {
 
   @Input()
-  public configurations: Configuration[] = [];
+  public configurations: configuration[] = [];
 
   @Output()
-  public deleted: EventEmitter<Configuration> = new EventEmitter<Configuration>();
+  public deleted: EventEmitter<configuration> = new EventEmitter<configuration>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public delete(configuration: Configuration): void {
+  public delete(configuration: configuration): void {
     this.deleted.emit(configuration);
   }
 

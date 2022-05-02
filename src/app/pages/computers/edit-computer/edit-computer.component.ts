@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ComputersService} from "../../../services/computers.service";
-import {Computer} from "../../../models/computer.model";
+import {computer} from "../../../models/computer.model";
 
 @Component({
   selector: 'app-edit-computer',
@@ -11,7 +11,7 @@ import {Computer} from "../../../models/computer.model";
 })
 export class EditComputerComponent implements OnInit {
 
-  public computer:Computer=new Computer();
+  public computer:computer=new computer();
 
   public form:FormGroup= {} as FormGroup;
 
@@ -30,7 +30,7 @@ export class EditComputerComponent implements OnInit {
       this.form = this.createFrom(this.computer)
     });
   }
-  private createFrom(computer:Computer): FormGroup{
+  private createFrom(computer:computer): FormGroup{
     return this.fb.group({
       username:[computer.name,Validators.required],
       ip:[computer.ip,Validators.required],

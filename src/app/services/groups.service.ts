@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Group} from "../models/group.model";
+import {group} from "../models/group.model";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
@@ -19,20 +19,20 @@ export class GroupsService {
     }
   }
 
-  public findAll(): Observable<Group[]> {
-    return this.http.get<Group[]>(environment.api + '/api/Group/', this.options);
+  public findAll(): Observable<group[]> {
+    return this.http.get<group[]>(environment.api + '/api/Group/', this.options);
   }
 
-  public findById(id: number): Observable<Group> {
-    return this.http.get<Group>(environment.api + '/api/Group/' + id, this.options);
+  public findById(id: number): Observable<group> {
+    return this.http.get<group>(environment.api + '/api/Group/' + id, this.options);
   }
 
-  public save(group: Group): Observable<Group> {
+  public save(group: group): Observable<group> {
     if (group.id) {
-      return this.http.put<Group>(environment.api + '/api/Group/' + group.id, group, this.options);
+      return this.http.put<group>(environment.api + '/api/Group/' + group.id, group, this.options);
 
     } else {
-      return this.http.post<Group>(environment.api + '/api/Group/', group, this.options);
+      return this.http.post<group>(environment.api + '/api/Group/', group, this.options);
     }
   }
 }

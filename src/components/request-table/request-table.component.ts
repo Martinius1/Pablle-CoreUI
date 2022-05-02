@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Computer} from "../../app/models/computer.model";
+import {computer} from "../../app/models/computer.model";
 
 @Component({
   selector: 'app-request-table',
@@ -9,22 +9,22 @@ import {Computer} from "../../app/models/computer.model";
 export class RequestTableComponent implements OnInit {
 
   @Input()
-  public computers: Computer[] = [];
+  public computers: computer[] = [];
 
   @Output()
-  public allowed: EventEmitter<Computer> = new EventEmitter<Computer>();
+  public allowed: EventEmitter<computer> = new EventEmitter<computer>();
   @Output()
-  public deleted: EventEmitter<Computer> = new EventEmitter<Computer>();
+  public deleted: EventEmitter<computer> = new EventEmitter<computer>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public allow(computer: Computer): void {
+  public allow(computer: computer): void {
     this.allowed.emit(computer);
   }
-  public delete(computer: Computer): void {
+  public delete(computer: computer): void {
     this.deleted.emit(computer);
   }
 

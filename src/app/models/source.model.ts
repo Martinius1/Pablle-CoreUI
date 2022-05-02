@@ -1,13 +1,13 @@
-import {Configuration} from "./configuration.model";
+import {configuration} from "./configuration.model";
 
 
-export class Source{
+export class sources{
   public id: number = 0;
-  public idConfig: number = 0;
+  public iD_Config: number = 0;
   public location: string = '';
 
 
 
 
-  public configurations: Configuration  = new Configuration();
+  public configuration: configuration  = new configuration();
 }

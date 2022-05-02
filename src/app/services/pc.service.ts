@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {SessionsService} from "./sessions.service";
 import {Observable} from "rxjs";
-import {Computer} from "../models/computer.model";
+import {computer} from "../models/computer.model";
 import {environment} from "../../environments/environment";
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class PcService{
     }
   }
 
-  public findAll(): Observable<Computer[]>{
-    return  this.http.get<Computer[]>(environment.api + '/api/Computer',this.options);
+  public findAll(): Observable<computer[]>{
+    return  this.http.get<computer[]>(environment.api + '/api/Computer',this.options);
   }
 }

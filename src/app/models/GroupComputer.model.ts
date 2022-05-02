@@ -1,10 +1,10 @@
-import {Group} from "./group.model";
-import {Computer} from "./computer.model";
+import {group} from "./group.model";
+import {computer} from "./computer.model";
 
-export class GroupComputer {
-  public GroupId: number = 0;
-  public ComputerId: number = 0;
+export class groupComputers {
+  public groupId: number = 0;
+  public computerId: number = 0;
 
-  public groups: Group = new Group();
-  public computers: Computer = new Computer();
+  public group: group = new group();
+  public computer: computer = new computer();
 }

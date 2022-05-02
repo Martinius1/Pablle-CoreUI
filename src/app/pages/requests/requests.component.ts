@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Computer} from "../../models/computer.model";
+import {computer} from "../../models/computer.model";
 import {Router} from "@angular/router";
 import {ComputersService} from "../../services/computers.service";
 import value from "*.json";
@@ -11,26 +11,26 @@ import value from "*.json";
 })
 export class RequestsComponent implements OnInit {
 
-  computers: Computer[] = [];
+  computers: computer[] = [];
 
   constructor(private router: Router,
               private service: ComputersService) {}
 
   ngOnInit(): void {
-    this.service.findAll().subscribe(data => this.computers = data.filter((value:Computer)=>!value.allowed));
+    this.service.findAll().subscribe(data => this.computers = data.filter((value:computer)=>!value.allowed));
   }
 
-  public delete(computer: Computer): void {
+  public delete(computer: computer): void {
     this.service.delete(computer.id);
     this.remove(computer);
   }
 
-  public allow(computer: Computer): void {
+  public allow(computer: computer): void {
     computer.allowed=true;
     this.service.save(computer).subscribe();
     this.remove(computer);
   }
-  public remove(computer: Computer): void {
+  public remove(computer: computer): void {
     var index = this.computers.findIndex(x => x.id ==computer.id);
     this.computers.splice(index, 1);
 

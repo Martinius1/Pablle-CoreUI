@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Computer} from "../../../../models/computer.model";
+import {computer} from "../../../../models/computer.model";
 import {Router} from "@angular/router";
 import {ComputersService} from "../../../../services/computers.service";
 
@@ -10,7 +10,7 @@ import {ComputersService} from "../../../../services/computers.service";
 })
 export class ConfigAddComputersComponent implements OnInit {
 
-  computers: Computer[] = [];
+  computers: computer[] = [];
 
   constructor(private router: Router,
               private service: ComputersService,) {}

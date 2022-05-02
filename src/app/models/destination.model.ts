@@ -1,10 +1,10 @@
-import {Configuration} from "./configuration.model";
+import {configuration} from "./configuration.model";
 
 
 export class Destination {
   public id: number = 0;
-  public idConfig: number = 0;
-  public location: string = '';
+  public iD_Config: number = 0;
+  public path: string = '';
 
-  public configurations: Configuration = new Configuration();
+  public configuration: configuration = new configuration();
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ConfigurationsService} from "../../services/configurations.service";
-import {Configuration} from "../../models/configuration.model";
+import {configuration} from "../../models/configuration.model";
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import {Configuration} from "../../models/configuration.model";
 export class HomeComponent implements OnInit {
 
 
-  configurations: Configuration[] = [];
+  configurations: configuration[] = [];
 
   constructor(
     private service:ConfigurationsService
@@ -21,12 +21,12 @@ export class HomeComponent implements OnInit {
     console.log(this.configurations[1].name)
 
   }
-  public delete(configuration: Configuration): void {
+  public delete(configuration: configuration): void {
     this.service.delete(configuration.id);
     this.remove(configuration);
   }
 
-  public remove(configuration: Configuration): void {
+  public remove(configuration: configuration): void {
     var index = this.configurations.findIndex(x => x.id ==configuration.id);
     this.configurations.splice(index, 1);
 

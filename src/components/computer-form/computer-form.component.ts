@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import {Computer} from "../../app/models/computer.model";
+import {computer} from "../../app/models/computer.model";
 
 @Component({
   selector: 'app-computer-form',
@@ -15,7 +15,7 @@ export class ComputerFormComponent implements OnInit {
   @Output()
   public saved: EventEmitter<void> = new EventEmitter<void>();
   @Input()
-  public model: Computer = new Computer;
+  public model: computer = new computer;
 
   constructor() { }
 

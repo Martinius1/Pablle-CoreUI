@@ -1,13 +1,14 @@
-import {GroupComputer} from "./GroupComputer.model";
-import {ConfigurationAssignments} from "./ConfigurationAssignments.model";
+import {groupComputers} from "./GroupComputer.model";
+import {configurationAsigment} from "./ConfigurationAssignments.model";
 
-export class Computer {
+export class computer {
   public id: number = 0;
   public name: string = '';
   public ip: string = '';
   public mac: string = '';
+
   public allowed: boolean = false;
 
-  public groupComputers: GroupComputer [] = [];
-  public configurationAssignments: ConfigurationAssignments[] = [];
+  public groupComputers: groupComputers [] = [];
+  public configurationAsigment: configurationAsigment[] = [];
 }

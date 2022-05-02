@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Computer} from "../models/computer.model";
+import {computer} from "../models/computer.model";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
@@ -19,25 +19,25 @@ export class ComputersService {
     }
   }
 
-  public findAll(): Observable<Computer[]> {
-    return this.http.get<Computer[]>(environment.api + '/api/Computer/', this.options);
+  public findAll(): Observable<computer[]> {
+    return this.http.get<computer[]>(environment.api + '/api/Computer/', this.options);
   }
 
-  public findById(id: number): Observable<Computer> {
-    return this.http.get<Computer>(environment.api + '/api/Computer/' + id, this.options);
+  public findById(id: number): Observable<computer> {
+    return this.http.get<computer>(environment.api + '/api/Computer/' + id, this.options);
   }
   public delete(id: number): void {
-    this.http.delete<Computer>(environment.api + '/api/Computer/' + id, this.options).subscribe();
+    this.http.delete<computer>(environment.api + '/api/Computer/' + id, this.options).subscribe();
   }
 
-  public save(computer: Computer): Observable<Computer> {
+  public save(computer: computer): Observable<computer> {
     if (computer.id) {
       console.log(computer.id);
       console.log(computer.name);
-      return this.http.put<Computer>(environment.api + '/api/Computer/' + computer.id, computer, this.options);
+      return this.http.put<computer>(environment.api + '/api/Computer/' + computer.id, computer, this.options);
 
     } else {
-      return this.http.post<Computer>(environment.api + '/api/Computer/', computer, this.options);
+      return this.http.post<computer>(environment.api + '/api/Computer/', computer, this.options);
     }
   }
 }

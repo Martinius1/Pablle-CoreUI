@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Computer} from "../../models/computer.model";
 import {Router} from "@angular/router";
-import {PcService} from "../../services/pc.service";
-import {Configuration} from "../../models/configuration.model";
+import {configuration} from "../../models/configuration.model";
 import {ConfigurationsService} from "../../services/configurations.service";
 
 @Component({
@@ -13,7 +11,7 @@ import {ConfigurationsService} from "../../services/configurations.service";
 export class TestComponent implements OnInit {
 
 
-  configurations: Configuration[] = [];
+  configurations: configuration[] = [];
 
   constructor(private router: Router,
               private service: ConfigurationsService) {}

@@ -1,10 +1,10 @@
-import {ConfigurationAssignments} from "./ConfigurationAssignments.model";
+import {configurationAsigment} from "./ConfigurationAssignments.model";
 
-export class Report{
+export class reports{
   public id: number = 0;
-  public ID_CA: number = 0;
-  public Date: string = '';
-  public Result: string = '';
+  public iD_CA: number = 0;
+  public date: string = '';
+  public result: string = '';
 
-  public configurationAssignments: ConfigurationAssignments = new ConfigurationAssignments();
+  public configurationAsigment: configurationAsigment = new configurationAsigment();
 }

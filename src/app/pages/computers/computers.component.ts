@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Computer} from "../../models/computer.model";
-import {Group} from "../../models/group.model";
+import {computer} from "../../models/computer.model";
+import {group} from "../../models/group.model";
 import {Router} from "@angular/router";
 import {ComputersService} from "../../services/computers.service";
 import {GroupsService} from "../../services/groups.service";
@@ -12,8 +12,8 @@ import {GroupsService} from "../../services/groups.service";
 })
 export class ComputersComponent implements OnInit {
 
-  computers: Computer[] = [];
-  groups: Group[] = [];
+  computers: computer[] = [];
+  groups: group[] = [];
 
   constructor(private router: Router,
               private service: ComputersService,
@@ -21,11 +21,11 @@ export class ComputersComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.service.findAll().subscribe(data => this.computers = data.filter((value:Computer)=>value.allowed));
+    this.service.findAll().subscribe(data => this.computers = data.filter((value:computer)=>value.allowed));
     this.groupsService.findAll().subscribe(data => this.groups = data);
   }
 
-  public edit(computer:Computer): void {
+  public edit(computer:computer): void {
     this.router.navigate([ 'computers', computer.id ]);
   }
 

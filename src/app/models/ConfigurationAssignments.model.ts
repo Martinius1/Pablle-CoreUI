@@ -1,13 +1,13 @@
-import {Report} from "./Report.model";
-import {Computer} from "./computer.model";
-import {Configuration} from "./configuration.model";
+import {reports} from "./Report.model";
+import {computer} from "./computer.model";
+import {configuration} from "./configuration.model";
 
-export class ConfigurationAssignments{
+export class configurationAsigment{
   public id: number = 0;
-  public ComputerId: number = 0;
-  public ConfigId: number  = 0;
+  public computerId: number = 0;
+  public configId: number  = 0;
 
-  public reports: Report [] = [];
-  public computers: Computer = new Computer();
-  public configurations: Configuration = new Configuration();
+  public reports: reports [] = [];
+  public computer: computer = new computer();
+  public configuration: configuration = new configuration();
 }

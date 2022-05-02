@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Computer} from "../../app/models/computer.model";
-import {Group} from "../../app/models/group.model";
+import {computer} from "../../app/models/computer.model";
+
 
 @Component({
   selector: 'app-computer-table',
@@ -10,16 +10,16 @@ import {Group} from "../../app/models/group.model";
 export class ComputerTableComponent implements OnInit {
 
   @Input()
-  public computers: Computer[] = [];
+  public computers: computer[] = [];
   @Output()
-  public selected: EventEmitter<Computer> = new EventEmitter<Computer>();
+  public selected: EventEmitter<computer> = new EventEmitter<computer>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public edit(computer:Computer):void{
+  public edit(computer:computer):void{
     this.selected.emit(computer);
   }
 

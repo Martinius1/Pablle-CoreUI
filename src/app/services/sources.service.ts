@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Source} from "../models/source.model";
+import {sources} from "../models/source.model";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
@@ -19,20 +19,20 @@ export class SourcesService {
     }
   }
 
-  public findAll(): Observable<Source[]> {
-    return this.http.get<Source[]>(environment.api + '/api/sources/', this.options);
+  public findAll(): Observable<sources[]> {
+    return this.http.get<sources[]>(environment.api + '/api/sources/', this.options);
   }
 
-  public findById(id: number): Observable<Source> {
-    return this.http.get<Source>(environment.api + '/api/sources/' + id, this.options);
+  public findById(id: number): Observable<sources> {
+    return this.http.get<sources>(environment.api + '/api/sources/' + id, this.options);
   }
 
-  public save(source: Source): Observable<Source> {
+  public save(source: sources): Observable<sources> {
     if (source.id) {
-      return this.http.put<Source>(environment.api + '/api/sources/' + source.id, source, this.options);
+      return this.http.put<sources>(environment.api + '/api/sources/' + source.id, source, this.options);
 
     } else {
-      return this.http.post<Source>(environment.api + '/api/sources/', source, this.options);
+      return this.http.post<sources>(environment.api + '/api/sources/', source, this.options);
     }
   }
 }

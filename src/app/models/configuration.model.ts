@@ -1,24 +1,24 @@
-import {Source} from "./source.model";
+import {sources} from "./source.model";
 import {Destination} from "./destination.model";
-import {ConfigurationAssignments} from "./ConfigurationAssignments.model";
-import {Time} from "./Time.model";
+import {configurationAsigment} from "./ConfigurationAssignments.model";
+import {times} from "./Time.model";
 import {ConfigurationGroup} from "./ConfigurationGroup.model";
 
 
-export class Configuration  {
+export class configuration  {
   public id: number = 0;
   public name: string = '';
-  public backupType: string = '';
+  public backup_Type: string = '';
   public rollover: number = 0;
-  public packageCount: number = 0;
+  public max_Package_Count: number = 0;
   public zip: number = 0;
 
 
 
 
-  public sources: Source [] = [];
+  public sources: sources [] = [];
   public destinations: Destination [] = [];
-  public configurationAssignments: ConfigurationAssignments [] = [];
-  public times: Time [] = [];
+  public configurationAsigment: configurationAsigment [] = [];
+  public times: times [] = [];
   public configurationGroups: ConfigurationGroup [] = [];
 }

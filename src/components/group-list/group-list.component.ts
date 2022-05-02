@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Computer} from "../../app/models/computer.model";
-import {Group} from "../../app/models/group.model";
+import {group} from "../../app/models/group.model";
 
 @Component({
   selector: 'app-group-list',
@@ -11,7 +10,7 @@ export class GroupListComponent implements OnInit {
 
 
   @Input()
-  public groups: Group[] = [];
+  public groups: group[] = [];
 
   constructor() { }
 

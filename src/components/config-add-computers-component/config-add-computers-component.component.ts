@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Computer} from "../../app/models/computer.model";
+import {computer} from "../../app/models/computer.model";
 
 @Component({
   selector: 'app-config-add-computers-component',
@@ -9,7 +9,7 @@ import {Computer} from "../../app/models/computer.model";
 export class ConfigAddComputersComponentComponent implements OnInit {
 
   @Input()
-  public computers: Computer[] = [];
+  public computers: computer[] = [];
 
   constructor() { }
 

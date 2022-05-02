@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import {Configuration} from "../../models/configuration.model";
+import {configuration} from "../../models/configuration.model";
 import {Router} from "@angular/router";
 import {ConfigurationsService} from "../../services/configurations.service";
 import { DashboardChartsData, IChartProps } from './dashboard-charts-data';
@@ -25,7 +25,7 @@ interface IUser {
 })
 export class DashboardComponent implements OnInit {
 
-  configurations: Configuration[] = [];
+  configurations: configuration[] = [];
 
   constructor(private chartsData: DashboardChartsData,
               private router: Router,
@@ -122,12 +122,12 @@ export class DashboardComponent implements OnInit {
     this.service.findAll().subscribe(data => this.configurations = data);
     console.log(this.configurations[1].name)
   }
-  public delete(configuration: Configuration): void {
+  public delete(configuration: configuration): void {
     this.service.delete(configuration.id);
     this.remove(configuration);
   }
 
-  public remove(configuration: Configuration): void {
+  public remove(configuration: configuration): void {
     var index = this.configurations.findIndex(x => x.id ==configuration.id);
     this.configurations.splice(index, 1);
 
