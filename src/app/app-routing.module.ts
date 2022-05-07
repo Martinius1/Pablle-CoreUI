@@ -19,6 +19,7 @@ import {AuthorizationComponent} from "./pages/authorization/authorization.compon
 import {TestComponent} from "./pages/test/test.component";
 import {ComputersComponent} from "./pages/computers/computers.component";
 import {HomeComponent} from "./pages/home/home.component";
+import { AuthGuard } from "./auth.guard";
 
 const routes: Routes = [
   {
@@ -34,35 +35,47 @@ const routes: Routes = [
     },
     children: [
       {
+        canActivate: [AuthGuard],
         path: 'dashboard',
         loadChildren: () =>
           import('./views/dashboard/dashboard.module').then((m) => m.DashboardModule)
       },
       {path:'home',
-      component:HomeComponent},
+      component:HomeComponent,
+        canActivate: [AuthGuard]},
       {path: 'logs',
-        component: LogsComponent},
+        component: LogsComponent,
+        canActivate: [AuthGuard]},
       {path: 'computers',
-        component: ComputersComponent },
+        component: ComputersComponent,
+        canActivate: [AuthGuard]},
       {path: 'computers/editgroup',
-      component: ChangeGroupComponent},
+      component: ChangeGroupComponent,
+        canActivate: [AuthGuard]},
       {path: 'requests',
-        component: RequestsComponent},
+        component: RequestsComponent,
+        canActivate: [AuthGuard]},
       {path: 'test',
-        component: TestComponent},
+        component: TestComponent,
+        canActivate: [AuthGuard]},
       {path: 'logs/messages',
-        component: MsgLogComponent},
+        component: MsgLogComponent,
+        canActivate: [AuthGuard]},
       {path: 'logs/alert',
-        component: AlertLogComponent},
+        component: AlertLogComponent,
+        canActivate: [AuthGuard]},
       {path: 'dashboard/configadd',
-        component: ConfigAddComponent},
+        component: ConfigAddComponent,
+        canActivate: [AuthGuard]},
       {path: 'dashboard/configtype',
-        component: ConfigTypeComponent},
+        component: ConfigTypeComponent,
+        canActivate: [AuthGuard]},
       {path: 'dashboard/configschedule',
-        component: ConfigScheduleComponent},
+        component: ConfigScheduleComponent,
+        canActivate: [AuthGuard]},
       {path: 'auth',
         component:AuthorizationComponent},
-      { path: 'computers/:id', component: EditComputerComponent },
+      { path: 'computers/:id', component: EditComputerComponent, canActivate: [AuthGuard] },
 
 
       {

@@ -36,4 +36,8 @@ export class SessionsService {
   public load(): string {
     return sessionStorage.getItem('token') || '';
   }
+
+  public loggedIn() {
+    return !!sessionStorage.getItem('token')
+  }
 }

@@ -68,6 +68,8 @@ import {
 } from "@docs-components/config-add-computers-component/config-add-computers-component.component";
 import { HomeComponent } from './pages/home/home.component';
 import {DashboardModule} from "./views/dashboard/dashboard.module";
+import {AuthGuard} from "./auth.guard";
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -124,7 +126,8 @@ const APP_CONTAINERS = [
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
     },
     IconSetService,
-    Title
+    Title,
+    AuthGuard
   ],
   bootstrap: [AppComponent],
   exports: [
