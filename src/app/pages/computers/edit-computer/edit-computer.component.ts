@@ -12,6 +12,7 @@ import {computer} from "../../../models/computer.model";
 export class EditComputerComponent implements OnInit {
 
   public computer:computer=new computer();
+  public emptycomputer:computer = new  computer();
 
   public form:FormGroup= {} as FormGroup;
 
@@ -37,8 +38,8 @@ export class EditComputerComponent implements OnInit {
       mac:[computer.mac,Validators.required]
     });
   }
-  public save(): void {
-    Object.assign(this.computer,this.form.value);
+  public save(model:computer): void {
+    Object.assign(this.computer,model);
 
     this.service.save(this.computer).subscribe(computer=>{
       this.router.navigate(['computers'])

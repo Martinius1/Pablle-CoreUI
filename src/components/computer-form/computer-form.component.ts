@@ -11,9 +11,8 @@ export class ComputerFormComponent implements OnInit {
 
   @Input()
   public form: FormGroup = {} as FormGroup
-
   @Output()
-  public saved: EventEmitter<void> = new EventEmitter<void>();
+  public saved: EventEmitter<computer> = new EventEmitter<computer>();
   @Input()
   public model: computer = new computer;
 
@@ -30,7 +29,8 @@ export class ComputerFormComponent implements OnInit {
     console.log(this.model.name);
     console.log(this.model.id);
     if (this.form.valid)
-      this.saved.emit();
+      //this.saved.emit();
+      this.saved.emit(this.model);
   }
 
 }

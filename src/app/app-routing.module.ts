@@ -49,9 +49,9 @@ const routes: Routes = [
       {path: 'computers',
         component: ComputersComponent,
         canActivate: [AuthGuard]},
-      {path: 'computers/editgroup',
-      component: ChangeGroupComponent,
-        canActivate: [AuthGuard]},
+      { path: 'groups/:id', component: ChangeGroupComponent, canActivate: [AuthGuard] },
+      //{ path: 'groups/new', component: , canActivate: [AuthGuard] },
+
       {path: 'requests',
         component: RequestsComponent,
         canActivate: [AuthGuard]},

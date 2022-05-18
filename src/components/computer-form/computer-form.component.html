@@ -1,47 +1,59 @@
 <form (ngSubmit)="submit()" #computerform="ngForm">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name"
-           required
-           [(ngModel)]="model.name" name="name"
-           #name="ngModel">
-    <div [hidden]="name.valid || name.pristine"
-         class="alert alert-danger">
-      Name is required
-    </div>
-  </div>
-</form>
-<form (ngSubmit)="submit()" [formGroup]="form">
   <div class="shadow button-bar card border-top-primary border-top-3 mb-3">
     <div class="card-header list-group-item-action">
       <button class="btn" type="text" aria-current="true">Edit Computer<svg cIcon class="me-2" name="cilPencil"></svg></button>
     </div>
     <div class="form-group input-group margin-top disabled">
-      <label for="PC" class="col-sm-2 col-form-label cor-form-center" style="display: block; text-align: center;">PC</label>
+      <label for="id" class="col-sm-2 col-form-label cor-form-center" style="display: block; text-align: center;">PC</label>
       <div class="col-sm-9">
-        <input type="name" class=" form-control-xl  form-control" id="PC" placeholder="PCID" disabled>
+        <input type="text" class="form-control-xl form-control" id="id"
+               required
+               [(ngModel)]="model.id" name="id"
+               #id="ngModel" disabled>
       </div>
     </div>
+
     <div class="input-group form-group margin-top" >
-      <label for="nickname" class="col-form-label col-sm-2 cor-form-center" style="display: block; text-align: center;">Nick Name</label>
+      <label for="name" class="col-form-label col-sm-2 cor-form-center" style="display: block; text-align: center;">Nick Name</label>
       <div class="col-sm-9">
-        <input formControlName="username" type="text" class=" form-control-xl form-control" id="nickname" placeholder="rename">
+        <input type="text" class="form-control-xl form-control" id="name"
+               required
+               [(ngModel)]="model.name" name="name"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
       </div>
     </div>
+
     <div class="form-group input-group margin-top ">
       <label for="IP" class="col-sm-2 col-form-label cor-form-center" style="display: block; text-align: center;">IP</label>
       <div class="col-sm-9">
-        <input formControlName="ip" type="text" class=" form-control-xl  form-control" id="IP" placeholder="198.67.5.99">
+        <input type="text" class="form-control" id="ip"
+                                   required
+                                   [(ngModel)]="model.ip" name="ip"
+                                   #ip="ngModel">
+        <div [hidden]="ip.valid || ip.pristine"
+             class="alert alert-danger">
+          IP is required
+        </div>
       </div>
     </div>
     <div class="form-group input-group margin-top">
       <label for="MAC" class="col-sm-2 col-form-label cor-form-center" style="display: block; text-align: center;">MAC</label>
       <div class="col-sm-9">
-        <input formControlName="mac" type="text" class=" form-control-xl  form-control" id="MAC" placeholder="10:92:AB:23:98">
+        <input type="text" class="form-control" id="mac"
+               required
+               [(ngModel)]="model.mac" name="mac"
+               #mac="ngModel">
+        <div [hidden]="mac.valid || mac.pristine"
+             class="alert alert-danger">
+          MAC is required
+        </div>
       </div>
     </div>
   </div>
-</form>
 
 
 
@@ -49,12 +61,7 @@
   <label for="group" class="col-form-label col-sm-2 cor-form-center" style="display: block; text-align: center;">Groups</label>
   <div class="col-sm-9" >
     <div class="" id="group">
-      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group1<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
-      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group2<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
-      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group3<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
-      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group4<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
-      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group5<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
-      <button class="list-group-item list-group-item-action" type="button" aria-current="true">group6<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
+      <button *ngFor="let group of model.groupComputers" class="list-group-item list-group-item-action" type="button" aria-current="true">{{group.group.name}}<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
     </div>
   </div>
   <button type="button" class="btn btn-outline-secondary bg-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
@@ -63,3 +70,4 @@
   <button class="btn btn btn-secondary bg-light" routerLink="/computers">Cancel</button>
   <button (click)="submit()" type="submit" class="btn btn btn-primary float-end">Save</button>
 </button>
+</form>
