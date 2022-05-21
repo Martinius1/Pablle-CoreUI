@@ -1,6 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import {computer} from "../../app/models/computer.model";
+import {GroupsService} from "../../app/services/groups.service";
+import {group} from "../../app/models/group.model";
+import {filter} from "rxjs/operators";
 
 @Component({
   selector: 'app-computer-form',
@@ -15,14 +18,21 @@ export class ComputerFormComponent implements OnInit {
   public saved: EventEmitter<computer> = new EventEmitter<computer>();
   @Input()
   public model: computer = new computer;
+  options: group[] = [];
+  selectedgroup:group = new group();
 
-  constructor() { }
+  constructor(
+    private service:GroupsService
+  ) { }
 
-  ngOnInit(): void {};
+  ngOnInit(): void {
+    this.service.findAll().subscribe(data => this.options = data.filter(x=> this.model.groupComputers.filter(y=>y.computerId == x.id).length==0))
+  };
 
   public show():void{
     console.log(this.model.name);
     console.log(this.model.id);
+    console.log(this.selectedgroup.name);
   }
 
   public submit(): void {
