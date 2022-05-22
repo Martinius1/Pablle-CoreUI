@@ -3,6 +3,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ComputersService} from "../../../services/computers.service";
 import {computer} from "../../../models/computer.model";
+import {group} from "../../../models/group.model";
+import {groupComputers} from "../../../models/GroupComputer.model";
+import { GroupsService } from "../../../services/groups.service";
 
 @Component({
   selector: 'app-edit-computer',
@@ -12,6 +15,8 @@ import {computer} from "../../../models/computer.model";
 export class EditComputerComponent implements OnInit {
 
   public computer:computer=new computer();
+  public group:group=new group();
+  public groupComputer:groupComputers = new groupComputers();
   public emptycomputer:computer = new  computer();
 
   public form:FormGroup= {} as FormGroup;
@@ -20,7 +25,8 @@ export class EditComputerComponent implements OnInit {
     private router:Router,
     private route:ActivatedRoute,
     private fb: FormBuilder,
-    private service:ComputersService
+    private service:ComputersService,
+    private groupService:GroupsService
   ) { }
 
   ngOnInit(): void {
@@ -44,6 +50,15 @@ export class EditComputerComponent implements OnInit {
     this.service.save(this.computer).subscribe(computer=>{
       this.router.navigate(['computers'])
     })
+  }
+  public saveGroupComputer(model:computer, selectedGroup:group): void {
+    Object.assign(this.groupComputer.computerId,model.id);
+    Object.assign(this.groupComputer.groupId,selectedGroup.id);
+
+    console.log(model.id)
+    console.log(selectedGroup.id)
+
+
   }
 
 }

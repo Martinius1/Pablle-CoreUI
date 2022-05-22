@@ -4,6 +4,7 @@ import {computer} from "../../app/models/computer.model";
 import {GroupsService} from "../../app/services/groups.service";
 import {group} from "../../app/models/group.model";
 import {filter} from "rxjs/operators";
+import {groupComputers} from "../../app/models/GroupComputer.model";
 
 @Component({
   selector: 'app-computer-form',
@@ -16,10 +17,14 @@ export class ComputerFormComponent implements OnInit {
   public form: FormGroup = {} as FormGroup
   @Output()
   public saved: EventEmitter<computer> = new EventEmitter<computer>();
+  @Output()
+  public savedGroup: EventEmitter<group> = new EventEmitter<group>();
   @Input()
   public model: computer = new computer;
   options: group[] = [];
-  selectedgroup:group = new group();
+
+  @Input()
+  public selectedgroup: group = new group();
 
   constructor(
     private service:GroupsService
@@ -37,10 +42,19 @@ export class ComputerFormComponent implements OnInit {
 
   public submit(): void {
     console.log(this.model.name);
-    console.log(this.model.id);
+    console.log(this.selectedgroup.name);
+    console.log(this.selectedgroup.id);
     if (this.form.valid)
       //this.saved.emit();
       this.saved.emit(this.model);
+      //this.savedGroup.emit(this.selectedgroup);
+  }
+
+  public addGroup(): void {
+    console.log(this.model.name);
+    console.log(this.selectedgroup.name);
+
+    //this.model.groupComputers = this.selectedgroup.id
   }
 
 }

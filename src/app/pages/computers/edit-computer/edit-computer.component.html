@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xl-8">
-      <app-computer-form *ngIf="computer" [form]="form" (saved)="save(computer)" [model]="computer"></app-computer-form>
+      <app-computer-form *ngIf="computer" [form]="form" (saved)="save(computer)" (savedGroup)="saveGroupComputer(computer,group)" [model]="computer" [selectedgroup]="group" ></app-computer-form>
     </div>
   </div>
 </div>
