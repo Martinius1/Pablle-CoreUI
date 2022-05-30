@@ -5,6 +5,9 @@ import {GroupsService} from "../../app/services/groups.service";
 import {group} from "../../app/models/group.model";
 import {filter} from "rxjs/operators";
 import {groupComputers} from "../../app/models/GroupComputer.model";
+import {ComputersService} from "../../app/services/computers.service";
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-computer-form',
@@ -27,7 +30,9 @@ export class ComputerFormComponent implements OnInit {
   public selectedgroup: group = new group();
 
   constructor(
-    private service:GroupsService
+    private service:GroupsService,
+    private computerservice:ComputersService,
+  private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -50,11 +55,29 @@ export class ComputerFormComponent implements OnInit {
       //this.savedGroup.emit(this.selectedgroup);
   }
 
-  public addGroup(): void {
+
+public addGroup(): void {
     console.log(this.model.name);
     console.log(this.selectedgroup.name);
+  const a1 = {
+    group:this.selectedgroup,
+    groupId:this.selectedgroup.id,
+    computer:this.model,
+    computerId:this.model.id
+  };
 
-    //this.model.groupComputers = this.selectedgroup.id
-  }
+  const a2 = {
+    group:this.selectedgroup,
+    groupId:this.selectedgroup.id,
+    computer:this.model,
+    computerId:this.model.id
+  };
+  //this.selectedgroup.groupComputers.push(a2);
+  this.service.save(this.selectedgroup);
+    this.model.groupComputers.push(a1);
+    this.model.groupComputers.every(x=>console.log(x.group.name));
+    //this.computerservice.save(this.model);
+
+}
 
 }
