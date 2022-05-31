@@ -20,6 +20,7 @@ import {TestComponent} from "./pages/test/test.component";
 import {ComputersComponent} from "./pages/computers/computers.component";
 import {HomeComponent} from "./pages/home/home.component";
 import { AuthGuard } from "./auth.guard";
+import {DashboardConfigEditComponent} from "./views/dashboard-config-edit/dashboard-config-edit.component";
 
 const routes: Routes = [
   {
@@ -75,7 +76,14 @@ const routes: Routes = [
         canActivate: [AuthGuard]},
       {path: 'auth',
         component:AuthorizationComponent},
-      { path: 'computers/:id', component: EditComputerComponent, canActivate: [AuthGuard] },
+      { path: 'computers/:id',
+        component: EditComputerComponent,
+        canActivate: [AuthGuard] },
+
+      { path: 'dashboard/:id',
+        component: DashboardConfigEditComponent,
+        canActivate: [AuthGuard]
+      },
 
 
       {
