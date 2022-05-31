@@ -56,7 +56,8 @@ import {DashboardTableComponent} from "../../../components/dashboard-table/dashb
     FormsModule
   ],
   exports: [
-    DashboardTableComponent
+    DashboardTableComponent,
+    ConfigAddComponent
   ],
   declarations: [DashboardComponent, ConfigAddComponent, ConfigTypeComponent, ConfigScheduleComponent, ConfigAddComputersComponent, ConfigAddSourceComponent, ConfigAddDestinationComponent, ConfigAddScheduleComponent, ConfigAddTypeComponent, DashboardTableComponent]
 })

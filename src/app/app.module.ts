@@ -69,6 +69,9 @@ import {
 import { HomeComponent } from './pages/home/home.component';
 import {DashboardModule} from "./views/dashboard/dashboard.module";
 import {AuthGuard} from "./auth.guard";
+import { TestcomponentComponent } from './views/testcomponent/testcomponent.component';
+import { DashboardConfigNewComponent } from "./views/dashboard-config-new/dashboard-config-new.component";
+import { DashboardConfigEditComponent } from "./views/dashboard-config-edit/dashboard-config-edit.component";
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -82,7 +85,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, LogsComponent, ComputersComponent, RequestsComponent, AlertLogComponent, MsgLogComponent, EditComputerComponent, ChangeGroupComponent, AuthorizationComponent, TestComponent, TableAddPcComponent, ConfigAddComputersComponentComponent, ComputerFormComponent, HomeComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, LogsComponent, ComputersComponent, RequestsComponent, AlertLogComponent, MsgLogComponent, EditComputerComponent, ChangeGroupComponent, AuthorizationComponent, TestComponent, TableAddPcComponent, ConfigAddComputersComponentComponent, ComputerFormComponent, HomeComponent, TestcomponentComponent, DashboardConfigNewComponent, DashboardConfigEditComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
