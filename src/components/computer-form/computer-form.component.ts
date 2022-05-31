@@ -7,6 +7,7 @@ import {filter} from "rxjs/operators";
 import {groupComputers} from "../../app/models/GroupComputer.model";
 import {ComputersService} from "../../app/services/computers.service";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import value from "*.json";
 
 
 @Component({
@@ -31,8 +32,7 @@ export class ComputerFormComponent implements OnInit {
 
   constructor(
     private service:GroupsService,
-    private computerservice:ComputersService,
-  private modalService: NgbModal
+    private computerservice:ComputersService
   ) { }
 
   ngOnInit(): void {
@@ -54,30 +54,50 @@ export class ComputerFormComponent implements OnInit {
       this.saved.emit(this.model);
       //this.savedGroup.emit(this.selectedgroup);
   }
+  public addToPc(Computer:computer):void
+  {
+    this.service.findById(this.selectedgroup.id).subscribe(x=>this.addToGroup(Computer,x));
+
+  }
+  public addToGroup(Computer:computer,Group:group): void{
+    const a1 = {
+      group:Group,
+      groupId:this.selectedgroup.id,
+      computer:Computer,
+      computerId:this.model.id
+    };
+    //this.TestComputer = Computer;
+    //this.TestGroup = Group;
+    //this.TestComputer.groupComputers.push(a1);
+    //Object.assign(this.model,this.TestComputer);
+    //this.model.groupComputers.push(a1);
+    //this.selectedgroup.groupComputers.push(a1);
+    //this.service.save(this.selectedgroup).subscribe(x=>console.log(x.name+" ulozeno"));
+  }
 
 
 public addGroup(): void {
+    this.computerservice.findById(this.model.id).subscribe(x=>this.addToPc(x));
     console.log(this.model.name);
     console.log(this.selectedgroup.name);
-  const a1 = {
-    group:this.selectedgroup,
-    groupId:this.selectedgroup.id,
-    computer:this.model,
-    computerId:this.model.id
-  };
-
-  const a2 = {
-    group:this.selectedgroup,
-    groupId:this.selectedgroup.id,
-    computer:this.model,
-    computerId:this.model.id
-  };
-  //this.selectedgroup.groupComputers.push(a2);
-  this.service.save(this.selectedgroup);
-    this.model.groupComputers.push(a1);
-    this.model.groupComputers.every(x=>console.log(x.group.name));
-    //this.computerservice.save(this.model);
-
+  this.model.groupComputers.every(x=>console.log(x.group.name));
 }
+/*
+    public save(model:computer): void {
+      Object.assign(this.computer,model);
+
+      this.service.save(this.computer).subscribe(computer=>{
+        this.router.navigate(['computers'])
+      })
+    }
+  public saveGroupComputer(model:computer, selectedGroup:group): void {
+    Object.assign(this.groupComputer.computerId,model.id);
+    Object.assign(this.groupComputer.groupId,selectedGroup.id);
+
+    console.log(model.id)
+    console.log(selectedGroup.id)
+
+
+  }*/
 
 }
