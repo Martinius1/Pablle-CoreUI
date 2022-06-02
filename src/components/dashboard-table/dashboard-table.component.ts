@@ -12,7 +12,12 @@ export class DashboardTableComponent implements OnInit {
   public configurations: configuration[] = [];
 
   @Output()
-  public deleted: EventEmitter<configuration> = new EventEmitter<configuration>();
+  public deleted: EventEmitter<configuration> = new EventEmitter<configuration>()
+
+  @Output()
+  public edited: EventEmitter<configuration> = new EventEmitter<configuration>();
+
+
 
   constructor() { }
 
@@ -21,6 +26,9 @@ export class DashboardTableComponent implements OnInit {
 
   public delete(configuration: configuration): void {
     this.deleted.emit(configuration);
+  }
+  public edit(config:configuration):void{
+    this.edited.emit(config);
   }
 
 }

@@ -26,4 +26,10 @@ export class ConfigAddComponent implements OnInit {
     this.showMe=!this.showMe;
   }
 
+  public submit(): void {
+
+      this.saved.emit(this.model);
+
+  }
+
 }

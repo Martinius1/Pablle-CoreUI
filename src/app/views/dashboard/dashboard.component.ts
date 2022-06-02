@@ -126,6 +126,9 @@ export class DashboardComponent implements OnInit {
     this.service.delete(configuration.id);
     this.remove(configuration);
   }
+  public edit(configuration:configuration): void {
+    this.router.navigate([ 'dashboard', configuration.id ]);
+  }
 
   public remove(configuration: configuration): void {
     var index = this.configurations.findIndex(x => x.id ==configuration.id);

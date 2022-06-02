@@ -2,7 +2,7 @@
   <li class="list-group-item container" *ngFor="let configuration of configurations">
     <span class="m-lg-1">{{ configuration.name }}</span>
     <button class="btn btn-primary btn-sm m-lg-1 float-end" (click)="delete(configuration)">Remove</button>
-    <button class="btn btn-primary btn-sm m-lg-1 float-end" routerLink="/dashboard/configadd">Edit</button>
+    <button class="btn btn-primary btn-sm m-lg-1 float-end" (click)="edit(configuration)">Edit</button>
   </li>
 
 </ul>

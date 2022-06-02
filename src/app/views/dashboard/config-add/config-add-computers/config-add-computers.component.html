@@ -12,8 +12,11 @@
       <div class="card-body">
         <div class="table-computer scrollable">
           <table class="table table-borderless table-hover ">
+            <button *ngFor="let configurationAsigment of model.configurationAsigment" class="list-group-item list-group-item-action" type="button" aria-current="true" >{{ configurationAsigment.computer.name }}<button class="btn btn-sm btn-secondary float-end bg-light" type="button"><svg cIcon class="me-2" name="cil-Trash"></svg>Remove</button></button>
           </table>
+
         </div>
+
       </div>
 
       <div class="card-footer">

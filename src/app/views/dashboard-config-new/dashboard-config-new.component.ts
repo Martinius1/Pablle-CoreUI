@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {configuration} from "../../models/configuration.model";
 import {ConfigurationsService} from "../../services/configurations.service";
+import {FormGroup} from "@angular/forms";
 
 
 @Component({
@@ -12,6 +13,9 @@ import {ConfigurationsService} from "../../services/configurations.service";
 export class DashboardConfigNewComponent implements OnInit {
 
   public configuration: configuration = new configuration();
+
+
+
   constructor(
     private router:Router,
     private route:ActivatedRoute,
@@ -19,9 +23,15 @@ export class DashboardConfigNewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.service.findById(id).subscribe(configuration=>{
-      //this.configuration= configuration;
-      //this.form = this.createFrom(this.computer)
+
+  }
+  public save(config:configuration): void {
+    Object.assign(this.configuration,config);
+
+    this.service.save(this.configuration).subscribe(configuration=>{
+      this.router.navigate(['configuration'])
+    })
   }
 
 }
+

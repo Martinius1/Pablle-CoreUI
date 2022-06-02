@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {configuration} from "../../../../models/configuration.model";
+import {ActivatedRoute, Router} from "@angular/router";
+import {ConfigurationsService} from "../../../../services/configurations.service";
 
 @Component({
   selector: 'app-config-add-source',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigAddSourceComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  public model: configuration = new configuration();
+
+  constructor(
+    private router:Router,
+    private route:ActivatedRoute,
+    private service:ConfigurationsService,
+  ) { }
 
   ngOnInit(): void {
+    let id = +this.route.snapshot.params['id'];
+    this.service.findById(id).subscribe(
+      x=> this.model = x
+    );
   }
 
 }

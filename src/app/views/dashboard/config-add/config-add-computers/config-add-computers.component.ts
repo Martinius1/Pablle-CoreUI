@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {computer} from "../../../../models/computer.model";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ComputersService} from "../../../../services/computers.service";
+import {configuration} from "../../../../models/configuration.model";
+import {ConfigurationsService} from "../../../../services/configurations.service";
 
 @Component({
   selector: 'app-config-add-computers',
@@ -10,14 +12,20 @@ import {ComputersService} from "../../../../services/computers.service";
 })
 export class ConfigAddComputersComponent implements OnInit {
 
-  computers: computer[] = [];
+  @Input()
+  public model: configuration = new configuration();
 
-  constructor(private router: Router,
-              private service: ComputersService,) {}
+  constructor(
+    private router:Router,
+    private route:ActivatedRoute,
+    private service:ConfigurationsService,
+  ) { }
 
   ngOnInit(): void {
-
-    this.service.findAll().subscribe(data => this.computers = data);
+    let id = +this.route.snapshot.params['id'];
+    this.service.findById(id).subscribe(
+      x=> this.model = x
+    );
   }
 
 }

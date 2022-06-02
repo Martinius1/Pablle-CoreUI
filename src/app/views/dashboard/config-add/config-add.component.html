@@ -1,3 +1,4 @@
+<p>{{ model.name }}</p>
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <app-config-add-computers></app-config-add-computers>
@@ -9,4 +10,4 @@
 </div>
 <div class="mb-3"></div>
 <button class="btn btn-primary" routerLink="/dashboard"><svg cIcon class="me-2" name="cil-ArrowRight"></svg>Back</button>
-<button class="btn btn-primary float-end" routerLink="/dashboard"><svg cIcon class="me-2" name="cil-Save"></svg>Save Configuration</button>
+<button class="btn btn-primary float-end" (click)="submit()" ><svg cIcon class="me-2" name="cil-Save"></svg>Save Configuration</button>
