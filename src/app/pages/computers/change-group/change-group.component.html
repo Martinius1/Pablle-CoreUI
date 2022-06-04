@@ -17,12 +17,8 @@
           <label for="group" class="col-form-label col-sm-2 cor-form-center" style="display: block; text-align: center;">Computers</label>
           <div class="col-sm-9" >
             <div class="" id="group">
-              <button class="list-group-item list-group-item-action" type="button" aria-current="true">PC1<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
-              <button class="list-group-item list-group-item-action" type="button" aria-current="true">PC2<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
-              <button class="list-group-item list-group-item-action" type="button" aria-current="true">PC3<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
-              <button class="list-group-item list-group-item-action" type="button" aria-current="true">PC4<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
-              <button class="list-group-item list-group-item-action" type="button" aria-current="true">PC5<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
-              <button class="list-group-item list-group-item-action" type="button" aria-current="true">PC6<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
+              <button *ngFor="let groupComputers of model.groupComputers" class="list-group-item list-group-item-action" type="button" aria-current="true">{{ groupComputers.computer.name }}<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
+
             </div>
           </div>
 

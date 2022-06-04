@@ -36,14 +36,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="mb-3">
+        <div  class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Source path</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="C:/users/documents">
+
+
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="C:/users/documents" [(ngModel)]="text">
+
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary bg-light" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="getValue(text)" >Add</button>
       </div>
     </div>
   </div>

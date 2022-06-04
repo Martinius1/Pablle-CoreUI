@@ -9,15 +9,34 @@
   </tr>
   </thead>
   <tbody>
-  <tr class="column1" *ngFor="let computers of computers">
+  <tr class="column1" *ngFor="let computer of availableComputers">
+    <td>{{ computer.id }}</td>
+    <td>{{ computer.name }}</td>
+    <td>{{ computer.ip }}</td>
+    <td>{{ computer.mac }}</td>
+    <div>
+
+        <button class="list-group-item list-group-item-action" type="button" aria-current="true" (click)="selectClick(computer)" ></button>
+
+
+    </div>
+
+  </tr>
+  <hr class="rounded">
+  <tr class="column1" *ngFor="let computers of selectedComputers" >
     <td>{{ computers.id }}</td>
     <td>{{ computers.name }}</td>
     <td>{{ computers.ip }}</td>
     <td>{{ computers.mac }}</td>
-    <div class="custom-control custom-checkbox justify-content-center">
-      <input type="checkbox" class="custom-control-input" id="customCheck1">
+    <div>
+
+      <button class="list-group-item list-group-item-action" type="button" aria-current="true" (click)="selectClick(computers)" ></button>
+
+
     </div>
   </tr>
 
+  <button class="list-group-item list-group-item-action" type="button" aria-current="true" (click)="test()" ></button>
   </tbody>
 </table>
+

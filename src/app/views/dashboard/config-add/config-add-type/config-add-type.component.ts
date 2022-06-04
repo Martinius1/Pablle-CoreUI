@@ -21,10 +21,7 @@ export class ConfigAddTypeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let id = +this.route.snapshot.params['id'];
-    this.service.findById(id).subscribe(
-      x=> this.model = x
-    );
+
   }
 
 }

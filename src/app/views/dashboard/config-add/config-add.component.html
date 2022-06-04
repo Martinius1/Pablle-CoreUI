@@ -1,11 +1,11 @@
 <p>{{ model.name }}</p>
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
-    <app-config-add-computers></app-config-add-computers>
-    <app-config-add-source></app-config-add-source>
-    <app-config-add-destination></app-config-add-destination>
+    <app-config-add-computers [model]="model" ></app-config-add-computers>
+    <app-config-add-source [model]="model"></app-config-add-source>
+    <app-config-add-destination [model]="model"></app-config-add-destination>
     <app-config-add-schedule></app-config-add-schedule>
-    <app-config-add-type></app-config-add-type>
+    <app-config-add-type [model]="model"></app-config-add-type>
   </div>
 </div>
 <div class="mb-3"></div>

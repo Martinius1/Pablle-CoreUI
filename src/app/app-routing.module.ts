@@ -89,6 +89,10 @@ const routes: Routes = [
         component: DashboardConfigNewComponent,
         canActivate: [AuthGuard]
       },
+      { path: 'computers/editgroup/editgroup',
+        component: ChangeGroupComponent,
+        canActivate: [AuthGuard]
+      },
 
 
       {
