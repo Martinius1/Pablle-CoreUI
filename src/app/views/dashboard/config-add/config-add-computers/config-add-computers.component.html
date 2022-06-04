@@ -14,7 +14,7 @@
           <table class="table table-borderless table-hover ">
 
 
-            <button *ngFor="let configurationAssignments of model.configurationAssignments"  class="list-group-item list-group-item-action" type="button" aria-current="true" >{{ configurationAssignments.computer.name }}<button class="btn btn-sm btn-secondary float-end bg-light" type="button"><svg cIcon class="me-2" name="cil-Trash"></svg>Remove</button></button>
+            <button *ngFor="let configurationAssignments of model.configurationAssignments"  class="list-group-item list-group-item-action" type="button" aria-current="true" >{{ configurationAssignments.computer.name }}<button class="btn btn-sm btn-secondary float-end bg-light" type="button" (click)="removePcFromList(configurationAssignments)"><svg cIcon class="me-2" name="cil-Trash"></svg>Remove</button></button>
           </table>
 
 
@@ -42,7 +42,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <app-checkbox-table [availableComputers]="unselectedComputersArray" (selectedPcOutput)="Confirm($event)"  ></app-checkbox-table>
+        <app-checkbox-table [availableComputers]="unselectedComputersArray" (selectedPcOutput)="saveSelected($event)"  ></app-checkbox-table>
         <nav class="navbar navbar-light">
           <form class="form-inline input-group">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -52,7 +52,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary bg-light" data-bs-dismiss="modal">Cancel</button>
-        <button (click)="Confirm(selectedComputersArray)" type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirm</button>
+        <button (click)="Confirm()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirm</button>
       </div>
     </div>
   </div>

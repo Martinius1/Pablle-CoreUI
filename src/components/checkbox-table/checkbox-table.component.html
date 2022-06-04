@@ -23,14 +23,14 @@
 
   </tr>
   <hr class="rounded">
-  <tr class="column1" *ngFor="let computers of selectedComputers" >
-    <td>{{ computers.id }}</td>
-    <td>{{ computers.name }}</td>
-    <td>{{ computers.ip }}</td>
-    <td>{{ computers.mac }}</td>
+  <tr class="column1" *ngFor="let computer of selectedComputers" >
+    <td>{{ computer.id }}</td>
+    <td>{{ computer.name }}</td>
+    <td>{{ computer.ip }}</td>
+    <td>{{ computer.mac }}</td>
     <div>
 
-      <button class="list-group-item list-group-item-action" type="button" aria-current="true" (click)="selectClick(computers)" ></button>
+      <button class="list-group-item list-group-item-action" type="button" aria-current="true" (click)="unselectClick(computer)" ></button>
 
 
     </div>

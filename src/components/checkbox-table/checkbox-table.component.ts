@@ -20,29 +20,41 @@ export class CheckboxTableComponent implements OnInit {
 
   computers: computer[] = [];
   selectedComputers : computer[] = [];
-  public isTrue: boolean = false;
 
 
   constructor(private router: Router,
               private service: ComputersService) {}
 
   ngOnInit(): void {
-
-    this.service.findAll().subscribe(data => this.computers = data.filter((value:computer)=>value.allowed));
-
+    //this.service.findAll().subscribe(data => this.computers = data.filter((value:computer)=>value.allowed));
   }
   test() {
     console.log(this.selectedComputers)
-
-
   }
+
   selectClick(clickComputer: computer) {
-
-    console.log(clickComputer)
-    this.selectedComputers.push(clickComputer)
+    this.removePcfromunselected(clickComputer);
+    this.selectedComputers.push(clickComputer);
     this.selectedPcOutput.emit(this.selectedComputers)
-
-
+  }
+  unselectClick(clickComputer: computer){
+    this.removePcfromselected(clickComputer);
+    this.availableComputers.push(clickComputer);
+    this.selectedPcOutput.emit(this.selectedComputers)
+  }
+  removePcfromselected(pc:computer): void
+  {
+    const index = this.selectedComputers.findIndex(x=>x.id == pc.id);
+    if (index > -1) {
+      this.selectedComputers.splice(index, 1);
+    }
+  }
+  removePcfromunselected(pc:computer):void
+  {
+    const index = this.availableComputers.findIndex(x=>x.id == pc.id);
+    if (index > -1) {
+      this.availableComputers.splice(index, 1);
+    }
   }
 
 

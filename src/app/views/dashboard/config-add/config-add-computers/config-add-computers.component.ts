@@ -21,8 +21,6 @@ export class ConfigAddComputersComponent implements OnInit {
   public testInput: computer[] = [];
 
 
-
-
   @Output()
   public unselectedComputers: EventEmitter<computer[]> = new EventEmitter<computer[]>();
 
@@ -38,30 +36,36 @@ export class ConfigAddComputersComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.computerService.findAll().subscribe(data => this.unselectedComputersArray = data);
-    this.unselectedComputers.emit(this.unselectedComputersArray)
+    this.computerService.findAll().subscribe(data => this.unselectedComputersArray = data.filter(x=> this.model.configurationAssignments.filter(y=>y.computerId == x.id).length==0).filter((value:computer)=>value.allowed));
+    //this.unselectedComputers.emit(this.unselectedComputersArray)
+  }
+  removePcFromList(ass:configurationAssignments): void{
+    const index = this.model.configurationAssignments.findIndex(x=>x.id == ass.id);
+    if (index > -1) {
+      this.model.configurationAssignments.splice(index, 1);
+    }
   }
   test(): void {
      this.model.configurationAssignments.forEach(x=> console.log(x.computer.name))
   }
-  public Confirm(model1: computer[]): void {
-    this.selectedComputersArray = model1
-    console.log(this.selectedComputersArray)
+  public saveSelected(data:computer[]): void{
+    this.selectedComputersArray = data;
+  }
+  public Confirm(): void {
+    this.selectedComputersArray.forEach(x=>this.addPctoModel(x));
+    this.computerService.findAll().subscribe(data => this.unselectedComputersArray = data.filter(x=> this.model.configurationAssignments.filter(y=>y.computerId == x.id).length==0).filter((value:computer)=>value.allowed));
+    // todo: Je nutne vyfiltrovat na ty ktere tam uz byli pridane
 
+
+  }
+  public addPctoModel(pc:computer):void{
     var configassign1 = new configurationAssignments();
-    configassign1.computer = this.selectedComputersArray[0];
-    configassign1.configId = this.model.id
-    configassign1.computerId = this.selectedComputersArray[0].id;
+    configassign1.computer = pc;
+    configassign1.configId = this.model.id;
+    configassign1.computerId = pc.id;
     configassign1.configuration = this.model;
 
     this.model.configurationAssignments.push(configassign1);
-    console.log(this.model.configurationAssignments)
-
-
-    this.model.configurationAssignments.push()
-
-
-
   }
 
 
