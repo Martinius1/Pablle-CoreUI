@@ -1,5 +1,5 @@
 import {groupComputers} from "./GroupComputer.model";
-import {configurationAssignments} from "./ConfigurationAssignments.model";
+import {configurationAssignment} from "./ConfigurationAssignments.model";
 
 export class computer {
   public id: number = 0;
@@ -10,5 +10,5 @@ export class computer {
   public allowed: boolean = false;
 
   public groupComputers: groupComputers [] = [];
-  public configurationAssignments: configurationAssignments[] = [];
+  public configurationAssignment: configurationAssignment[] = [];
 }

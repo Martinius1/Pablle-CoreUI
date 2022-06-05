@@ -14,7 +14,7 @@
           <table class="table table-borderless table-hover ">
 
 
-            <button *ngFor="let configurationAssignments of model.configurationAssignments"  class="list-group-item list-group-item-action" type="button" aria-current="true" >{{ configurationAssignments.computer.name }}<button class="btn btn-sm btn-secondary float-end bg-light" type="button" (click)="removePcFromList(configurationAssignments)"><svg cIcon class="me-2" name="cil-Trash"></svg>Remove</button></button>
+            <button *ngFor="let configurationAssignments of model.configurationAssignment"  class="list-group-item list-group-item-action" type="button" aria-current="true" >{{ configurationAssignments.computer.name }}<button class="btn btn-sm btn-secondary float-end bg-light" type="button" (click)="removePcFromList(configurationAssignments)"><svg cIcon class="me-2" name="cil-Trash"></svg>Remove</button></button>
           </table>
 
 

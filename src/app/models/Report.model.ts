@@ -1,4 +1,4 @@
-import {configurationAssignments} from "./ConfigurationAssignments.model";
+import {configurationAssignment} from "./ConfigurationAssignments.model";
 
 export class reports{
   public id: number = 0;
@@ -6,5 +6,5 @@ export class reports{
   public date: string = '';
   public result: string = '';
 
-  public configurationAssignments: configurationAssignments = new configurationAssignments();
+  public configurationAssignment: configurationAssignment = new configurationAssignment();
 }

@@ -5,7 +5,7 @@ import {ComputersService} from "../../../../services/computers.service";
 import {configuration} from "../../../../models/configuration.model";
 import {ConfigurationsService} from "../../../../services/configurations.service";
 import value from "*.json";
-import {configurationAssignments} from "../../../../models/ConfigurationAssignments.model";
+import {configurationAssignment} from "../../../../models/ConfigurationAssignments.model";
 
 @Component({
   selector: 'app-config-add-computers',
@@ -36,36 +36,36 @@ export class ConfigAddComputersComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.computerService.findAll().subscribe(data => this.unselectedComputersArray = data.filter(x=> this.model.configurationAssignments.filter(y=>y.computerId == x.id).length==0).filter((value:computer)=>value.allowed));
+    this.computerService.findAll().subscribe(data => this.unselectedComputersArray = data.filter(x=> this.model.configurationAssignment.filter(y=>y.computerId == x.id).length==0).filter((value:computer)=>value.allowed));
     //this.unselectedComputers.emit(this.unselectedComputersArray)
   }
-  removePcFromList(ass:configurationAssignments): void{
-    const index = this.model.configurationAssignments.findIndex(x=>x.id == ass.id);
+  removePcFromList(ass:configurationAssignment): void{
+    const index = this.model.configurationAssignment.findIndex(x=>x.id == ass.id);
     if (index > -1) {
-      this.model.configurationAssignments.splice(index, 1);
+      this.model.configurationAssignment.splice(index, 1);
     }
   }
   test(): void {
-     this.model.configurationAssignments.forEach(x=> console.log(x.computer.name))
+     this.model.configurationAssignment.forEach(x=> console.log(x.computer.name))
   }
   public saveSelected(data:computer[]): void{
     this.selectedComputersArray = data;
   }
   public Confirm(): void {
     this.selectedComputersArray.forEach(x=>this.addPctoModel(x));
-    this.computerService.findAll().subscribe(data => this.unselectedComputersArray = data.filter(x=> this.model.configurationAssignments.filter(y=>y.computerId == x.id).length==0).filter((value:computer)=>value.allowed));
+    this.computerService.findAll().subscribe(data => this.unselectedComputersArray = data.filter(x=> this.model.configurationAssignment.filter(y=>y.computerId == x.id).length==0).filter((value:computer)=>value.allowed));
     // todo: Je nutne vyfiltrovat na ty ktere tam uz byli pridane
 
 
   }
   public addPctoModel(pc:computer):void{
-    var configassign1 = new configurationAssignments();
+    var configassign1 = new configurationAssignment();
     configassign1.computer = pc;
     configassign1.configId = this.model.id;
     configassign1.computerId = pc.id;
     configassign1.configuration = this.model;
 
-    this.model.configurationAssignments.push(configassign1);
+    this.model.configurationAssignment.push(configassign1);
   }
 
 

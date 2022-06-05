@@ -1,6 +1,6 @@
 import {sources} from "./source.model";
 import {Destination} from "./destination.model";
-import {configurationAssignments} from "./ConfigurationAssignments.model";
+import {configurationAssignment} from "./ConfigurationAssignments.model";
 import {times} from "./Time.model";
 import {ConfigurationGroup} from "./ConfigurationGroup.model";
 
@@ -18,7 +18,7 @@ export class configuration  {
 
   public sources: sources [] = [];
   public destinations: Destination [] = [];
-  public configurationAssignments: configurationAssignments [] = [];
+  public configurationAssignment: configurationAssignment [] = [];
   public times: times [] = [];
   public configurationGroups: ConfigurationGroup [] = [];
 }

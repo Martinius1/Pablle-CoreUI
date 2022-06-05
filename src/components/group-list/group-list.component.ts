@@ -15,6 +15,10 @@ export class GroupListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+  public onClick(groupselected: group): void{
+    console.log(groupselected)
   }
 
 }

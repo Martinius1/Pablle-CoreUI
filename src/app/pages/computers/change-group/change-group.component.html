@@ -9,7 +9,8 @@
         <div class="form-group input-group margin-top disabled">
           <label for="PC" class="col-sm-2 col-form-label cor-form-center" style="display: block; text-align: center;">Group name</label>
           <div class="col-sm-9">
-            <input type="name" class=" form-control-xl  form-control" id="PC" placeholder="name">
+            <input type="name" class=" form-control-xl  form-control" id="PC" placeholder="name" [(ngModel)]="model.name" name="conName"
+                   #name="ngModel">
           </div>
         </div>
         <div style="height: 2vh"></div>
