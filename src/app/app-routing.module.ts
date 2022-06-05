@@ -22,6 +22,7 @@ import {HomeComponent} from "./pages/home/home.component";
 import { AuthGuard } from "./auth.guard";
 import {DashboardConfigEditComponent} from "./views/dashboard-config-edit/dashboard-config-edit.component";
 import {DashboardConfigNewComponent} from "./views/dashboard-config-new/dashboard-config-new.component";
+import {CreateGroupComponent} from "./pages/computers/create-group/create-group.component";
 
 const routes: Routes = [
   {
@@ -91,6 +92,10 @@ const routes: Routes = [
       },
       { path: 'computers/editgroup/:id',
         component: ChangeGroupComponent,
+        canActivate: [AuthGuard]
+      },
+      { path: 'computers/new/new',
+        component: CreateGroupComponent,
         canActivate: [AuthGuard]
       },
 

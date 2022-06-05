@@ -3,20 +3,19 @@
      <table class="table table-borderless table-hover">
        <thead>
        <tr class="table2 fixed">
+         <th scope="col">Configuration</th>
          <th scope="col">Computer</th>
-         <th scope="col">Nickname</th>
-         <th scope="col">IP</th>
-         <th scope="col">MAC</th>
+         <th scope="col">Date</th>
+         <th scope="col">Result</th>
          <th scope="col"></th>
        </tr>
        </thead>
        <tbody>
          <tr class="column1" *ngFor="let report of reports">
-                    <td>{{ report.id }}</td>
+                    <td>{{ report.configurationAssignment.configuration.name }}</td>
                     <td>{{ report.configurationAssignment.computer.name }}</td>
                     <td>{{ report.date }}</td>
                     <td>{{ report.result }}</td>
-                    <td><button class="btn bg-light mat-raised-button" routerLink="/computers/editcomputer"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></td>
                   </tr>
 
        </tbody>

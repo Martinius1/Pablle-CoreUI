@@ -16,27 +16,28 @@
     <td>{{ computer.mac }}</td>
     <div>
 
-        <button class="list-group-item list-group-item-action" type="button" aria-current="true" (click)="selectClick(computer)" ></button>
+        <button class="list-group-item list-group-item-action" cBgColor="light" type="button" aria-current="true" (click)="selectClick(computer)" ></button>
 
 
     </div>
 
   </tr>
-  <hr class="rounded">
-  <tr class="column1" *ngFor="let computer of selectedComputers" >
-    <td>{{ computer.id }}</td>
-    <td>{{ computer.name }}</td>
-    <td>{{ computer.ip }}</td>
-    <td>{{ computer.mac }}</td>
-    <div>
 
-      <button class="list-group-item list-group-item-action" type="button" aria-current="true" (click)="unselectClick(computer)" ></button>
+  <hr class="rounded" size="7" width="320%">
+      <tr class="column1" *ngFor="let computer of selectedComputers" >
+        <td>{{ computer.id }}</td>
+        <td>{{ computer.name }}</td>
+        <td>{{ computer.ip }}</td>
+        <td>{{ computer.mac }}</td>
+        <div>
+
+          <button class="list-group-item list-group-item-action" cBgColor="light" type="button" aria-current="true" (click)="unselectClick(computer)" ></button>
 
 
-    </div>
-  </tr>
+        </div>
+      </tr>
 
-  <button class="list-group-item list-group-item-action" type="button" aria-current="true" (click)="test()" ></button>
+
   </tbody>
 </table>
 

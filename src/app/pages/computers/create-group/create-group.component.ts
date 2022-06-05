@@ -1,20 +1,17 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {ConfigurationsService} from "../../../services/configurations.service";
-import {group} from "../../../models/group.model";
-import {GroupsService} from "../../../services/groups.service";
 import {computer} from "../../../models/computer.model";
+import {group} from "../../../models/group.model";
+import {ActivatedRoute, Router} from "@angular/router";
+import {GroupsService} from "../../../services/groups.service";
 import {ComputersService} from "../../../services/computers.service";
-import {configurationAssignment} from "../../../models/ConfigurationAssignments.model";
 import {groupComputers} from "../../../models/GroupComputer.model";
 
 @Component({
-  selector: 'app-change-group',
-  templateUrl: './change-group.component.html',
-  styleUrls: ['./change-group.component.scss']
+  selector: 'app-create-group',
+  templateUrl: './create-group.component.html',
+  styleUrls: ['./create-group.component.scss']
 })
-export class ChangeGroupComponent implements OnInit {
-
+export class CreateGroupComponent implements OnInit {
 
   @Output()
   public unselectedComputers: EventEmitter<computer[]> = new EventEmitter<computer[]>();
@@ -32,10 +29,7 @@ export class ChangeGroupComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let id = +this.route.snapshot.params['id'];
-    this.service.findById(id).subscribe(
-      x=> this.model = x
-    );
+
     this.computerService.findAll().subscribe(data => this.unselectedComputersArray = data.filter(x=> this.model.groupComputers.filter(y=>y.computerId == x.id).length==0).filter((value:computer)=>value.allowed));
   }
 
