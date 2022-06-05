@@ -11,11 +11,10 @@
        </tr>
        </thead>
        <tbody>
-         <tr class="column1" *ngFor="let reports of reports">
-                    <td>{{ reports.id }}</td>
-                    <td>{{ reports.configurationAssignments.computer.name }}</td>
-                    <td>{{ reports.date }}</td>
-                    <td>{{ reports.result }}</td>
+         <tr class="column1" *ngFor="let report of reports">
+                    <td>{{ report.id }}</td>
+                    <td>{{ report.date }}</td>
+                    <td>{{ report.result }}</td>
                     <td><button class="btn bg-light mat-raised-button" routerLink="/computers/editcomputer"><svg cIcon class="me-2" name="cilSettings"></svg>Edit</button></td>
                   </tr>
 
