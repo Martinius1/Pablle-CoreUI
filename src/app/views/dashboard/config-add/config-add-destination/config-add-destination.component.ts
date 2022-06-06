@@ -11,7 +11,8 @@ import {Destination} from "../../../../models/destination.model";
   styleUrls: ['./config-add-destination.component.scss']
 })
 export class ConfigAddDestinationComponent implements OnInit {
-
+  howMe: boolean = true;
+  pokus = 1;
   @Input()
   public model: configuration = new configuration();
   public text: string = "";
@@ -33,5 +34,6 @@ export class ConfigAddDestinationComponent implements OnInit {
     this.model.destinations.push(newsource)
 
   }
+
 
 }

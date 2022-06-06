@@ -9,9 +9,7 @@
               <label ngbButtonLabel class="btn-primary btn-sm">
                 <input ngbButton type="radio" class="btn-check" id="test" [value]="1"> message
               </label>
-              <label ngbButtonLabel class="btn-primary btn-sm">
-                <input ngbButton type="radio" class="btn-check" id="test2" [value]="2" >alerts
-              </label>
+
             </div>
             <div *ngIf="model == 1"  >
               <app-msg-log [reports]="reports"></app-msg-log>
