@@ -71,7 +71,8 @@ export class ComputerFormComponent implements OnInit {
     //this.TestComputer.groupComputers.push(a1);
     //Object.assign(this.model,this.TestComputer);
     //this.model.groupComputers.push(a1);
-    //this.selectedgroup.groupComputers.push(a1);
+    this.selectedgroup.groupComputers.push(a1);
+    this.service.AddPc(Group,Computer).subscribe(x=>console.log(x.name+" ulozeno"));
     //this.service.save(this.selectedgroup).subscribe(x=>console.log(x.name+" ulozeno"));
   }
 

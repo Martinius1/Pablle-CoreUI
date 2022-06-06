@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {SessionsService} from "./sessions.service";
+import {computer} from "../models/computer.model";
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,10 @@ export class GroupsService {
 
   public findById(id: number): Observable<group> {
     return this.http.get<group>(environment.api + '/api/Group/' + id, this.options);
+  }
+  public AddPc(group: group,pc:computer) : Observable<group>
+  {
+    return this.http.put<group>(environment.api + '/AddPc/'+group.id,pc,this.options);
   }
 
   public save(group: group): Observable<group> {
