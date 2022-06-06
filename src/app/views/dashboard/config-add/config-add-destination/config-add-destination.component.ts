@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ConfigurationsService} from "../../../../services/configurations.service";
 import {sources} from "../../../../models/source.model";
 import {Destination} from "../../../../models/destination.model";
+import {configurationAssignment} from "../../../../models/ConfigurationAssignments.model";
 
 @Component({
   selector: 'app-config-add-destination',
@@ -33,6 +34,12 @@ export class ConfigAddDestinationComponent implements OnInit {
 
     this.model.destinations.push(newsource)
 
+  }
+  removePcFromList(ass:Destination): void{
+    const index = this.model.destinations.findIndex(x=>x.id == ass.id);
+    if (index > -1) {
+      this.model.destinations.splice(index, 1);
+    }
   }
 
 

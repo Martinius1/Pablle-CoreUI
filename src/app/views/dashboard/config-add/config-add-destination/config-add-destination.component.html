@@ -12,7 +12,7 @@
             <label for="destinationgroup" class="col-form-label col-sm-2 cor-form-center" style="display: block; text-align: center;">To :</label>
             <div class="col-sm-9" >
               <div class="" id="destinationgroup">
-                <button *ngFor="let destination of model.destinations" class="list-group-item list-group-item-action" type="button" aria-current="true" >{{ destination.path }}<button class="btn btn-sm btn-secondary float-end bg-light" type="button"><svg cIcon class="me-2" name="cil-Trash"></svg>Remove</button></button>
+                <button *ngFor="let destination of model.destinations" class="list-group-item list-group-item-action" type="button" aria-current="true" >{{ destination.path }}<button class="btn btn-sm btn-secondary float-end bg-light" type="button" (click)="removePcFromList(destination)"><svg cIcon class="me-2" name="cil-Trash"></svg>Remove</button></button>
 
 
 

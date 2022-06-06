@@ -6,6 +6,7 @@ import {computer} from "../../../models/computer.model";
 import {group} from "../../../models/group.model";
 import {groupComputers} from "../../../models/GroupComputer.model";
 import { GroupsService } from "../../../services/groups.service";
+import {configurationAssignment} from "../../../models/ConfigurationAssignments.model";
 
 @Component({
   selector: 'app-edit-computer',
@@ -37,6 +38,7 @@ export class EditComputerComponent implements OnInit {
       this.form = this.createFrom(this.computer)
     });
   }
+
   private createFrom(computer:computer): FormGroup{
     return this.fb.group({
       username:[computer.name,Validators.required],

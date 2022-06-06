@@ -13,6 +13,7 @@ export class ConfigAddScheduleComponent implements OnInit {
   date!: {year: number, month: number};
   showMe:boolean = true
   constructor(private calendar: NgbCalendar) { }
+  public text: string = "";
 
   ngOnInit(): void {
 

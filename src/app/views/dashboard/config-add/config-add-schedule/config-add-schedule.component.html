@@ -7,6 +7,7 @@
   <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
     <div class="accordion-body">
       <div class="button-schedule">
+        <!--
         <button class="button btn btn-primary mb-3" (click)=toogleTag() >Switch Time Input</button>
       </div>
       <div *ngIf="showMe==false" class="monthly">
@@ -85,7 +86,18 @@
             </div>
           </div>
         </div>
+        -->
+
+
+
+        <label for="exampleFormControlInput1" class="form-label">Cron Setting</label>
+
+
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="0 15 10 ? * *" [(ngModel)]="text">
+
+
       </div>
+
     </div>
   </div>
 </div>

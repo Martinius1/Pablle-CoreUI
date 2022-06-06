@@ -3,6 +3,7 @@ import {configuration} from "../../../../models/configuration.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ConfigurationsService} from "../../../../services/configurations.service";
 import {sources} from "../../../../models/source.model";
+import {Destination} from "../../../../models/destination.model";
 
 @Component({
   selector: 'app-config-add-source',
@@ -31,6 +32,12 @@ export class ConfigAddSourceComponent implements OnInit {
 
     this.model.sources.push(newsource)
 
+  }
+  removePcFromList(ass:sources): void{
+    const index = this.model.sources.findIndex(x=>x.id == ass.id);
+    if (index > -1) {
+      this.model.sources.splice(index, 1);
+    }
   }
 
 
