@@ -32,6 +32,9 @@ export class SessionsService {
     this.token = token;
     sessionStorage.setItem('token', token);
   }
+  public logout() : void {
+    sessionStorage.clear();
+  }
 
   public load(): string {
     return sessionStorage.getItem('token') || '';

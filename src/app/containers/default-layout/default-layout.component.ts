@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
+import { SessionsService } from "../../services/sessions.service";
 import { navItems } from './_nav';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,16 @@ export class DefaultLayoutComponent {
   public perfectScrollbarConfig = {
     suppressScrollX: true,
   };
+  public logout(): void {
+    this.router.navigate(['/login'])
+    this.service.logout();
+  }
 
-  constructor() {}
+  constructor(
+    private router: Router,
+    private service: SessionsService
+  ) {}
 }
+
+
+
