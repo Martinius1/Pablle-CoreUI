@@ -77,7 +77,13 @@ export class ComputerFormComponent implements OnInit {
     //this.service.AddPc(Group,Computer).subscribe(x=>console.log(x.name+" ulozeno"));
     //this.service.save(this.selectedgroup).subscribe(x=>console.log(x.name+" ulozeno"));
   }
+public removegroup(grouppc:groupComputers):void{
 
+  const index = this.model.groupComputers.findIndex(x=>x.computerId == this.model.id && x.groupId==grouppc.groupId);
+  if (index > -1) {
+    this.model.groupComputers.splice(index, 1);
+  }
+}
 
 public addGroup(): void {
     console.log("Podivej se: id groupy je "+this.selectedgroup.id);
