@@ -66,22 +66,26 @@ export class ComputerFormComponent implements OnInit {
       computer:Computer,
       computerId:this.model.id
     };
+    //Object.assign(a1.group.groupComputers,a2);
+    //a1.group.groupComputers.push(a2);
     //this.TestComputer = Computer;
     //this.TestGroup = Group;
     //this.TestComputer.groupComputers.push(a1);
     //Object.assign(this.model,this.TestComputer);
-    //this.model.groupComputers.push(a1);
-    this.selectedgroup.groupComputers.push(a1);
-    this.service.AddPc(Group,Computer).subscribe(x=>console.log(x.name+" ulozeno"));
+    this.model.groupComputers.push(a1);
+    //this.selectedgroup.groupComputers.push(a1);
+    //this.service.AddPc(Group,Computer).subscribe(x=>console.log(x.name+" ulozeno"));
     //this.service.save(this.selectedgroup).subscribe(x=>console.log(x.name+" ulozeno"));
   }
 
 
 public addGroup(): void {
+    console.log("Podivej se: id groupy je "+this.selectedgroup.id);
+    this.computerservice.addgroup(this.model.id,this.selectedgroup.id).subscribe(x=> console.log(x));
     this.computerservice.findById(this.model.id).subscribe(x=>this.addToPc(x));
-    console.log(this.model.name);
-    console.log(this.selectedgroup.name);
-  this.model.groupComputers.every(x=>console.log(x.group.name));
+    //console.log(this.model.name);
+    //console.log(this.selectedgroup.name);
+  //this.model.groupComputers.every(x=>console.log(x.group.name));
 }
 /*
     public save(model:computer): void {

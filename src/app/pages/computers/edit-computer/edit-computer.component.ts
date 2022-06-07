@@ -48,6 +48,8 @@ export class EditComputerComponent implements OnInit {
   }
   public save(model:computer): void {
     Object.assign(this.computer,model);
+    console.log("Ukladani:");
+    model.groupComputers.forEach(x=>console.log(x.group.name));
 
     this.service.save(this.computer).subscribe(computer=>{
       this.router.navigate(['computers'])

@@ -29,7 +29,7 @@ export class DashboardConfigNewComponent implements OnInit {
     Object.assign(this.configuration,config);
 
     this.service.save(this.configuration).subscribe(configuration=>{
-      this.router.navigate(['configuration'])
+      this.router.navigate(['dashboard'])
     })
   }
 

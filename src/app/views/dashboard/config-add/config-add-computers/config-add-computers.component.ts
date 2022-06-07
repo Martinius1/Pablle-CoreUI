@@ -24,6 +24,7 @@ export class ConfigAddComputersComponent implements OnInit {
   @Output()
   public unselectedComputers: EventEmitter<computer[]> = new EventEmitter<computer[]>();
 
+
   unselectedComputersArray: computer[] = [];
   public selectedComputersArray: computer[] = [];
 
@@ -44,6 +45,7 @@ export class ConfigAddComputersComponent implements OnInit {
     if (index > -1) {
       this.model.configurationAssignment.splice(index, 1);
     }
+    //this.service.save(this.model).subscribe(x=>console.log("ukladaaaaaa se smazani pc v configuraci:"+ x.name))
   }
   test(): void {
      this.model.configurationAssignment.forEach(x=> console.log(x.computer.name))
@@ -53,6 +55,7 @@ export class ConfigAddComputersComponent implements OnInit {
   }
   public Confirm(): void {
     this.selectedComputersArray.forEach(x=>this.addPctoModel(x));
+    this.selectedComputersArray.forEach(x=>this.service.addpctoconfig(this.model.id,x.id).subscribe(x=>console.log(x.computer.name)));
     this.computerService.findAll().subscribe(data => this.unselectedComputersArray = data.filter(x=> this.model.configurationAssignment.filter(y=>y.computerId == x.id).length==0).filter((value:computer)=>value.allowed));
     // todo: Je nutne vyfiltrovat na ty ktere tam uz byli pridane
 

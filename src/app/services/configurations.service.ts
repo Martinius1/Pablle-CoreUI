@@ -4,6 +4,8 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {SessionsService} from "./sessions.service";
+import {groupComputers} from "../models/GroupComputer.model";
+import {configurationAssignment} from "../models/ConfigurationAssignments.model";
 
 
 @Injectable({
@@ -38,5 +40,9 @@ export class ConfigurationsService {
     } else {
       return this.http.post<configuration>(environment.api + '/api/Configuration/', configuration, this.options);
     }
+  }
+  public addpctoconfig(idconfig:number,idpc:number):Observable<configurationAssignment>
+  {
+    return this.http.post<configurationAssignment>(environment.api + '/addconfig/'+idconfig, idpc, this.options);
   }
 }

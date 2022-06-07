@@ -4,6 +4,8 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 import {SessionsService} from "./sessions.service";
+import {groupComputers} from "../models/GroupComputer.model";
+import {group} from "../models/group.model";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +30,10 @@ export class ComputersService {
   }
   public delete(id: number): void {
     this.http.delete<computer>(environment.api + '/api/Computer/' + id, this.options).subscribe();
+  }
+  public addgroup(idpc:number,idgroup:number):Observable<groupComputers>
+  {
+    return this.http.post<groupComputers>(environment.api + '/addgroup/'+idpc, idgroup, this.options);
   }
 
   public save(computer: computer): Observable<computer> {
