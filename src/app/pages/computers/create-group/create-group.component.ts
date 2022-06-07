@@ -47,6 +47,13 @@ export class CreateGroupComponent implements OnInit {
 
 
   }
+  removePcFromList(ass:groupComputers): void{
+    const index = this.model.groupComputers.findIndex(x=>x.computerId == ass.computerId);
+    if (index > -1) {
+      this.model.groupComputers.splice(index, 1);
+    }
+    //this.service.save(this.model).subscribe(x=>console.log("ukladaaaaaa se smazani pc v configuraci:"+ x.name))
+  }
   public addPctoModel(pc:computer):void{
     var groupComputers1 = new groupComputers();
     groupComputers1.computer = pc;

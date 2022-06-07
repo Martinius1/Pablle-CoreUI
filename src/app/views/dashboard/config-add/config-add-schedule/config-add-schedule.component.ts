@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import {computer} from "../../../../models/computer.model";
+import {times} from "../../../../models/Time.model";
 
 @Component({
   selector: 'app-config-add-schedule',
@@ -14,6 +16,7 @@ export class ConfigAddScheduleComponent implements OnInit {
   showMe:boolean = true
   constructor(private calendar: NgbCalendar) { }
   public text: string = "";
+  public truemodel: times = new times;
 
   ngOnInit(): void {
 
@@ -25,6 +28,11 @@ export class ConfigAddScheduleComponent implements OnInit {
 
   selectToday() {
     this.model = this.calendar.getToday();
+  }
+  public Confirm(): void {
+
+
+
   }
 
 }

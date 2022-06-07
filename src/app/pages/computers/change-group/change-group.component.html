@@ -18,7 +18,7 @@
           <label for="group" class="col-form-label col-sm-2 cor-form-center" style="display: block; text-align: center;">Computers</label>
           <div class="col-sm-9" >
             <div class="" id="group">
-              <button *ngFor="let groupComputers of model.groupComputers" class="list-group-item list-group-item-action" type="button" aria-current="true">{{ groupComputers.computer.name }}<button class="btn btn-sm btn-secondary float-end bg-light" type="button">remove</button></button>
+              <button *ngFor="let groupComputers of model.groupComputers" class="list-group-item list-group-item-action" type="button" aria-current="true">{{ groupComputers.computer.name }}<button class="btn btn-sm btn-secondary float-end bg-light" type="button" (click)="removePcFromList(groupComputers)">remove</button></button>
 
             </div>
           </div>
