@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 export class AuthorizationComponent implements  OnInit {
 
   form: FormGroup = {} as FormGroup
+  public show:Boolean = false;
 
   constructor(private fb: FormBuilder,
               private router: Router,
@@ -27,6 +28,8 @@ export class AuthorizationComponent implements  OnInit {
     this.service.login(this.form.value).subscribe(result => {
       if (result) {
         this.router.navigate([ '/' ]);
+      }else{
+        this.show = true;
       }
     });
   }

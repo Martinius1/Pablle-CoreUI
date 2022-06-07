@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
               private router: Router,
               private service: SessionsService) { }
 
+  public show:Boolean = false;
+
   ngOnInit(): void {
     this.form = this.fb.group({
       username: [ '', Validators.required ],
@@ -27,8 +29,12 @@ export class LoginComponent implements OnInit {
     this.service.login(this.form.value).subscribe(result => {
       if (result) {
         this.router.navigate([ '/dashboard' ]);
+      }else{
+        this.show = true;
       }
     });
+
+    //this.show = true;
   }
 
 }
