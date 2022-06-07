@@ -29,16 +29,11 @@
   >
   </c-sidebar-nav>
     </perfect-scrollbar>
-  <c-sidebar-toggler
-    *ngIf="!sidebar.narrow"
-    toggle="unfoldable"
-    cSidebarToggle="sidebar"
-  ></c-sidebar-toggler>
+    <button (click)="logout()" class="btn btn-secondary" style=" float:right;height: 7vh;">Log Out</button>
+
+
 </c-sidebar>
 
-<div style="float:right;" class="btn-secondary;">
-  <button (click)="logout()" class="btn " style="background-color:lightgray; ">Log Out</button>
-</div>
 
 
 
