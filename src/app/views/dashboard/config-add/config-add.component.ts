@@ -35,7 +35,7 @@ export class ConfigAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.computerService.findAll().subscribe(data => this.unselectedcomputers = data.filter(x=> this.model.configurationAssignment.filter(y=>y.computerId == x.id).length==0).filter((value:computer)=>value.allowed));
-   this.textforcron = this.model.times[0].cron
+
 
   }
   selectClick(clickComputer: computer) {
@@ -142,8 +142,14 @@ export class ConfigAddComponent implements OnInit {
     newsource.configuration = config
     this.model.times.push(newsource);
     //this.model.times[0] = newsource
-    console.log(newsource.cron + "vstup")
-    this.model.times.forEach(x=>console.log(x.cron));
+    this.textforcron=""
+  }
+
+  removeCronFromList(ass:times): void{
+    const index = this.model.times.findIndex(x=>x.id == ass.id);
+    if (index > -1) {
+      this.model.times.splice(index, 1);
+    }
   }
 
 
