@@ -12,7 +12,7 @@ import {FormGroup} from "@angular/forms";
 })
 export class DashboardConfigNewComponent implements OnInit {
 
-  public configuration: configuration = new configuration();
+  public Configuration: configuration = new configuration();
 
 
 
@@ -23,12 +23,13 @@ export class DashboardConfigNewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    //this.service.save(this.Configuration).subscribe(x=>this.Configuration = x);
+    //console.log(this.Configuration.id + "tohle je id nove configurace")
   }
   public save(config:configuration): void {
-    Object.assign(this.configuration,config);
+    Object.assign(this.Configuration,config);
 
-    this.service.save(this.configuration).subscribe(configuration=>{
+    this.service.save(this.Configuration).subscribe(configuration=>{
       this.router.navigate(['dashboard'])
     })
   }

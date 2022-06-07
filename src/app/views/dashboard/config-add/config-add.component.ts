@@ -35,6 +35,7 @@ export class ConfigAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.computerService.findAll().subscribe(data => this.unselectedcomputers = data.filter(x=> this.model.configurationAssignment.filter(y=>y.computerId == x.id).length==0).filter((value:computer)=>value.allowed));
+   this.textforcron = this.model.times[0].cron
 
   }
   selectClick(clickComputer: computer) {
@@ -95,23 +96,31 @@ export class ConfigAddComponent implements OnInit {
 
 
   addSource():void {
+    this.configService.findById(this.model.id).subscribe(x=>this.sourceconstant(x))
+  }
+  sourceconstant(config:configuration){
     var newsource = new sources()
     newsource.location = this.textforsource
     newsource.iD_Config = this.model.id
-    this.textforsource = ""
+    newsource.configuration = config
+    this.textfordestination = ""
     this.model.sources.push(newsource)
-
   }
   //Tady zacina destination add compoment
 
   addDestination():void {
+    this.configService.findById(this.model.id).subscribe(x=>this.destinationconstant(x))
+
+  }
+  destinationconstant(config:configuration){
     var newsource = new Destination()
     newsource.path = this.textfordestination
     newsource.iD_Config = this.model.id
+    newsource.configuration = config
     this.textfordestination = ""
     this.model.destinations.push(newsource)
-
   }
+
   removeDestinationFromList(ass:Destination): void{
     const index = this.model.destinations.findIndex(x=>x.id == ass.id);
     if (index > -1) {
@@ -121,12 +130,23 @@ export class ConfigAddComponent implements OnInit {
   //Tady zacina Time Compoment
 
   addCron():void {
+    this.configService.findById(this.model.id).subscribe(x=>this.cronconstant(x))
+
+  }
+
+  cronconstant(config:configuration){
+
     var newsource = new times();
     newsource.cron = this.textforcron;
     newsource.iD_Config = this.model.id
-    this.textfordestination = ""
-    this.model.times.push(newsource)
+    newsource.configuration = config
+    this.model.times.push(newsource);
+    //this.model.times[0] = newsource
+    console.log(newsource.cron + "vstup")
+    this.model.times.forEach(x=>console.log(x.cron));
   }
+
+
 
   public submit(): void {
       this.saved.emit(this.model);
