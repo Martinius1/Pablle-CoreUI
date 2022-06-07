@@ -240,24 +240,61 @@
       <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
         <div class="accordion-body">
           <div class="button-schedule">
-            <label for="exampleFormControlInput1" class="form-label">Cron Setting</label>
+            <div class="card-body">
+              <div class="input-group form-group" >
+                <label for="destinationgroup" class="col-form-label col-sm-2 cor-form-center" style="display: block; text-align: center;">To :</label>
+                <div class="col-sm-9" >
+                  <div class="" id="schedulegroup">
+                    <button class="list-group-item list-group-item-action" type="button" aria-current="true" ><button class="btn btn-sm btn-secondary float-end bg-light" type="button"><svg cIcon class="me-2" name="cil-Trash"></svg>Remove</button></button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-outline-secondary bg-light" data-bs-toggle="modal" data-bs-target="#ScheduleModal">
+                  Add
+                </button>
+              </div>
+            </div>
+          <!--  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="0 15 10 ? * *" [(ngModel)]="textforcron">
 
-
-
-            <div>odstranit</div>
-
-
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="0 15 10 ? * *" [(ngModel)]="textforcron">
-
-            <button class="btn btn-primary float-end"  ><svg cIcon class="me-2" name="cil-User-Follow" (click)="addCron()"></svg>Confirm</button>
-            <br>
-            <br>
-
+            <button class="btn btn-primary float-end"  ><svg cIcon class="me-2" name="cil-User-Follow" (click)="addCron()"></svg>Confirm</button>-->
           </div>
-
         </div>
       </div>
     </div>
+
+
+    <!--Modal schedule -->
+    <div class="modal fade" id="ScheduleModal" tabindex="-1" aria-labelledby="DestinationModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ScheduleModalLabel">Add Cron</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Cron</label>
+                <input type="text" class="form-control" id="scheduleneco" placeholder="0 0 1 * *">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary bg-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" >Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
 
     <!-- Config Add Type -->
     <div class="accordion-item">
