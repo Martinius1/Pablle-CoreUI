@@ -69,12 +69,41 @@ export class ConfigAddComponent implements OnInit {
     configassign1.computerId = pc.id;
     configassign1.configuration = this.model;
 
-    this.model.configurationAssignment.push(configassign1);
+    if (this.model.id = 0){
+      this.model.configurationAssignment.push(configassign1)
+    }else{
+      console.log("tohle se nema vypistovat")
+      console.log(this.model.id)
+      this.configService.findById(this.model.id).subscribe(x=>this.confset(configassign1,x))
+    }
+
+
+    //this.model.configurationAssignment.push(configassign1);
+  }
+  addPctomodelnoID(pc:computer):void{
+    var configassign1 = new configurationAssignment();
+    configassign1.computer = pc;
+    configassign1.configId = 0;
+    configassign1.computerId = pc.id;
+    configassign1.configuration = this.model;
+
+    this.model.configurationAssignment.push(configassign1)
+  }
+  confset(ass:configurationAssignment,config:configuration){
+    ass.configuration = config
+    this.model.configurationAssignment.push( ass);
   }
   ConfirmPcAdd():void
   {
-    this.selectedcomputers.forEach(x=>this.addPctoModel(x));
-    this.selectedcomputers.forEach(x=>this.configService.addpctoconfig(this.model.id,x.id).subscribe(x=>console.log(x.computer.name)));
+    if (this.model.id = 0){
+
+      this.selectedcomputers.forEach(x=>this.addPctomodelnoID(x));
+    }else{
+      console.log("tohle se nema vypistovatadyt")
+      console.log(this.model.id)
+      //this.selectedcomputers.forEach(x=>this.addPctoModel(x));
+      //this.selectedcomputers.forEach(x=>this.configService.addpctoconfig(this.model.id,x.id).subscribe(x=>console.log(x.computer.name)));
+    }
 
     this.selectedcomputers = [];
   }
@@ -96,7 +125,11 @@ export class ConfigAddComponent implements OnInit {
 
 
   addSource():void {
-    this.configService.findById(this.model.id).subscribe(x=>this.sourceconstant(x))
+    if (this.model.id = 0){
+      this.sourceconstant(this.model);
+    }else{
+      this.configService.findById(this.model.id).subscribe(x=>this.sourceconstant(x))
+    }
   }
   sourceconstant(config:configuration){
     var newsource = new sources()
@@ -109,7 +142,11 @@ export class ConfigAddComponent implements OnInit {
   //Tady zacina destination add compoment
 
   addDestination():void {
-    this.configService.findById(this.model.id).subscribe(x=>this.destinationconstant(x))
+    if (this.model.id = 0){
+      this.destinationconstant(this.model);
+    }else{
+      this.configService.findById(this.model.id).subscribe(x=>this.destinationconstant(x))
+    }
 
   }
   destinationconstant(config:configuration){
@@ -130,7 +167,11 @@ export class ConfigAddComponent implements OnInit {
   //Tady zacina Time Compoment
 
   addCron():void {
-    this.configService.findById(this.model.id).subscribe(x=>this.cronconstant(x))
+    if (this.model.id = 0){
+      this.cronconstant(this.model);
+    }else{
+      this.configService.findById(this.model.id).subscribe(x=>this.cronconstant(x))
+    }
 
   }
 
